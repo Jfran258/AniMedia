@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52B07654BF4FAACF6B9D3FA1 /* Pods_Sparkdev_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57CF43A70995262F1224578 /* Pods_Sparkdev_Project.framework */; };
+		BC5F6E8728E7341700A53C99 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */; };
+		BC5F6E8928E7342700A53C99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F6E8828E7342700A53C99 /* LoginViewController.swift */; };
 		BC7CF9C528DF7D740023768A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CF9C428DF7D740023768A /* AppDelegate.swift */; };
 		BC7CF9C728DF7D740023768A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CF9C628DF7D740023768A /* SceneDelegate.swift */; };
 		BC7CF9C928DF7D740023768A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CF9C828DF7D740023768A /* ViewController.swift */; };
 		BC7CF9CC28DF7D740023768A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7CF9CA28DF7D740023768A /* Main.storyboard */; };
 		BC7CF9CE28DF7D740023768A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC7CF9CD28DF7D740023768A /* Assets.xcassets */; };
 		BC7CF9D128DF7D740023768A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7CF9CF28DF7D740023768A /* LaunchScreen.storyboard */; };
+		BCC7B77E28DFF182009439E2 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC7B77D28DFF181009439E2 /* CustomTabBarViewController.swift */; };
+		BCF7BB5728E64C2000E31456 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCF7BB5628E64C2000E31456 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94EB3D5CBF19B77CB25C345A /* Pods-Sparkdev-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparkdev-Project.release.xcconfig"; path = "Target Support Files/Pods-Sparkdev-Project/Pods-Sparkdev-Project.release.xcconfig"; sourceTree = "<group>"; };
+		BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BC5F6E8828E7342700A53C99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BC7CF9C128DF7D740023768A /* Sparkdev-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sparkdev-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7CF9C428DF7D740023768A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC7CF9C628DF7D740023768A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +32,10 @@
 		BC7CF9CD28DF7D740023768A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC7CF9D028DF7D740023768A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC7CF9D228DF7D740023768A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC7B77D28DFF181009439E2 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		BCF7BB5628E64C2000E31456 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EAF65AA574383F61AFCE30DA /* Pods-Sparkdev-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparkdev-Project.debug.xcconfig"; path = "Target Support Files/Pods-Sparkdev-Project/Pods-Sparkdev-Project.debug.xcconfig"; sourceTree = "<group>"; };
+		F57CF43A70995262F1224578 /* Pods_Sparkdev_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sparkdev_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B07654BF4FAACF6B9D3FA1 /* Pods_Sparkdev_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6046AC83F914016AE4B82BEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F57CF43A70995262F1224578 /* Pods_Sparkdev_Project.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC7CF9B828DF7D730023768A = {
 			isa = PBXGroup;
 			children = (
 				BC7CF9C328DF7D740023768A /* Sparkdev-Project */,
 				BC7CF9C228DF7D740023768A /* Products */,
+				C6523B42AF563771FF2F5015 /* Pods */,
+				6046AC83F914016AE4B82BEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +83,24 @@
 				BC7CF9C628DF7D740023768A /* SceneDelegate.swift */,
 				BC7CF9C828DF7D740023768A /* ViewController.swift */,
 				BC7CF9CA28DF7D740023768A /* Main.storyboard */,
+				BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */,
+				BC5F6E8828E7342700A53C99 /* LoginViewController.swift */,
 				BC7CF9CD28DF7D740023768A /* Assets.xcassets */,
 				BC7CF9CF28DF7D740023768A /* LaunchScreen.storyboard */,
 				BC7CF9D228DF7D740023768A /* Info.plist */,
+				BCF7BB5628E64C2000E31456 /* GoogleService-Info.plist */,
+				BCC7B77D28DFF181009439E2 /* CustomTabBarViewController.swift */,
 			);
 			path = "Sparkdev-Project";
+			sourceTree = "<group>";
+		};
+		C6523B42AF563771FF2F5015 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EAF65AA574383F61AFCE30DA /* Pods-Sparkdev-Project.debug.xcconfig */,
+				94EB3D5CBF19B77CB25C345A /* Pods-Sparkdev-Project.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC7CF9D528DF7D740023768A /* Build configuration list for PBXNativeTarget "Sparkdev-Project" */;
 			buildPhases = (
+				F25BFE2AAEFBDFCD98B48A42 /* [CP] Check Pods Manifest.lock */,
 				BC7CF9BD28DF7D740023768A /* Sources */,
 				BC7CF9BE28DF7D740023768A /* Frameworks */,
 				BC7CF9BF28DF7D740023768A /* Resources */,
+				36B7EE09251134508BB51CE4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC7CF9D128DF7D740023768A /* LaunchScreen.storyboard in Resources */,
+				BCF7BB5728E64C2000E31456 /* GoogleService-Info.plist in Resources */,
 				BC7CF9CE28DF7D740023768A /* Assets.xcassets in Resources */,
 				BC7CF9CC28DF7D740023768A /* Main.storyboard in Resources */,
 			);
@@ -133,13 +172,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36B7EE09251134508BB51CE4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sparkdev-Project/Pods-Sparkdev-Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sparkdev-Project/Pods-Sparkdev-Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sparkdev-Project/Pods-Sparkdev-Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F25BFE2AAEFBDFCD98B48A42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sparkdev-Project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC7CF9BD28DF7D740023768A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC5F6E8928E7342700A53C99 /* LoginViewController.swift in Sources */,
 				BC7CF9C928DF7D740023768A /* ViewController.swift in Sources */,
+				BC5F6E8728E7341700A53C99 /* RegisterViewController.swift in Sources */,
 				BC7CF9C528DF7D740023768A /* AppDelegate.swift in Sources */,
+				BCC7B77E28DFF182009439E2 /* CustomTabBarViewController.swift in Sources */,
 				BC7CF9C728DF7D740023768A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +368,7 @@
 		};
 		BC7CF9D628DF7D740023768A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAF65AA574383F61AFCE30DA /* Pods-Sparkdev-Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +397,7 @@
 		};
 		BC7CF9D728DF7D740023768A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94EB3D5CBF19B77CB25C345A /* Pods-Sparkdev-Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
