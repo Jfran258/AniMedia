@@ -6,7 +6,12 @@ target 'Sparkdev-Project' do
   use_frameworks!
 
   # Pods for Sparkdev-Project
- pod 'FirebaseAuth'
- pod 'FirebaseFirestore'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
+  pod 'AlamofireImage'
+  pod 'youtube-ios-player-helper'
 
 end

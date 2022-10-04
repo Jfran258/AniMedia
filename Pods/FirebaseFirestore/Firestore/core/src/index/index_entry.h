@@ -42,6 +42,12 @@ class IndexEntry : public util::Comparable<IndexEntry> {
         directional_value_(std::move(directional_value)) {
   }
 
+  /**
+   * Returns an IndexEntry entry that sorts immediately after the current
+   * directional value.
+   */
+  IndexEntry Successor() const;
+
   int32_t index_id() const {
     return index_id_;
   }
@@ -62,8 +68,7 @@ class IndexEntry : public util::Comparable<IndexEntry> {
   size_t Hash() const;
 
   std::string ToString() const;
-  friend std::ostream& operator<<(std::ostream& out,
-                                  const IndexEntry& database_id);
+  friend std::ostream& operator<<(std::ostream& out, const IndexEntry& entry);
 
  private:
   int32_t index_id_;
