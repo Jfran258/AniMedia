@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>478604043395-9tp9v6e1e2hhfpu96gca2mllfvv3br6f.apps.googleusercontent.com</string>
+	<string>181067861696-i3dp4elf9h9hdrvevmcp8njvvi79s1fa.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.478604043395-9tp9v6e1e2hhfpu96gca2mllfvv3br6f</string>
+	<string>com.googleusercontent.apps.181067861696-i3dp4elf9h9hdrvevmcp8njvvi79s1fa</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBrJRzPWQkCo45JuV3O-_U1Ft3YQPEvaIU</string>
+	<string>AIzaSyCfhaRHd9BQhWuqvMb3-kV4_XUq1y65QbE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>478604043395</string>
+	<string>181067861696</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>io.francis.Sparkdev-Project</string>
 	<key>PROJECT_ID</key>
-	<string>sparkdev-animedia</string>
+	<string>animedia-7ff8a</string>
 	<key>STORAGE_BUCKET</key>
-	<string>sparkdev-animedia.appspot.com</string>
+	<string>animedia-7ff8a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:478604043395:ios:ec57d0abc9aeb3d92ea7b6</string>
+	<string>1:181067861696:ios:4cd6637228c1f8951ee725</string>
 </dict>
 </plist>
