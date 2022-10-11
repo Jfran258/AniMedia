@@ -35,8 +35,8 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             if let dataArray = snapshot.value as? [String: Any] {
                 // Getting the room name
                 if let roomName = dataArray["roomName"] as? String {
-                    // Creating room object with the received room name
-                    let room = Room.init(roomName: roomName)
+                    // Creating room object with unique id and the received room name
+                    let room = Room.init(roomId: snapshot.key, roomName: roomName)
                     
                     // Add room to rooms array
                     self.rooms.append(room)
@@ -50,10 +50,21 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // When a room is selected, open the chat room view
     @IBAction func roomSelected(_ sender: UIButton) {
-        print("Room selected: \(sender.titleLabel?.text)")
+        // Name of selected room
+        let roomSelected = sender.titleLabel?.text
         
         // Creating the view
         let chatRoomView = self.storyboard?.instantiateViewController(withIdentifier: "chatRoom") as! ChatRoomViewController
+        
+        // Iterate the rooms to find the selected room
+        for room in rooms {
+            // Found room
+            if room.roomName == roomSelected {
+                // Pass selected room to the chat room view
+                chatRoomView.room = room
+                break;
+            }
+        }
         
         self.navigationController?.pushViewController(chatRoomView, animated: true)
     }
@@ -68,9 +79,6 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // Set the room name
         cell.roomButton.setTitle(room.roomName, for: .normal)
-        
-        cell.roomButton.titleLabel?.font = UIFont.systemFont(ofSize: 50, weight: .bold)
-       
 
         return cell
     }
@@ -79,15 +87,4 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rooms.count
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
