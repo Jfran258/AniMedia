@@ -8,5 +8,6 @@
 import UIKit
 
 struct Room {
+    var roomId: String?
     var roomName: String?
 }
