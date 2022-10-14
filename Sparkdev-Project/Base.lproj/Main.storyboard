@@ -202,6 +202,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf1-gw-XbV" userLabel="Login">
                                 <rect key="frame" x="155" y="448" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
@@ -454,6 +455,7 @@
                                         <subviews>
                                             <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXS-lz-DDb">
                                                 <rect key="frame" x="15" y="0.0" width="328" height="55"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -468,12 +470,14 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qX-Cs-nGJ">
                                         <rect key="frame" x="358" y="0.0" width="70" height="55"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="Zbg-Uh-Bk9"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Send"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Send">
+                                            <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="sendButtonPressed:" destination="hkF-E6-7oE" eventType="touchUpInside" id="cGQ-iU-uqg"/>
                                         </connections>
@@ -483,17 +487,87 @@
                                     <constraint firstAttribute="height" constant="55" id="xxm-E4-im8"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="URA-5o-r3y">
+                                <rect key="frame" x="0.0" y="47" width="428" height="780"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="103" id="XQd-Lo-NDv" customClass="ChatCell" customModule="Sparkdev_Project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="428" height="103"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XQd-Lo-NDv" id="fxN-rW-Bvb">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="103"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-j7-ruP">
+                                                    <rect key="frame" x="10" y="10" width="408" height="93"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBK-NY-hj9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="66" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-Lo-2Hm">
+                                                            <rect key="frame" x="0.0" y="17" width="168.66666666666666" height="76"/>
+                                                            <subviews>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="This is a message." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wi-ER-wS8">
+                                                                    <rect key="frame" x="7" y="0.0" width="154.66666666666666" height="76"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="230" id="2ie-f9-ZpC"/>
+                                                                    </constraints>
+                                                                    <color key="textColor" systemColor="labelColor"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                </textView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="4Wi-ER-wS8" secondAttribute="trailing" constant="7" id="HWf-tD-BiU"/>
+                                                                <constraint firstItem="4Wi-ER-wS8" firstAttribute="leading" secondItem="aGb-Lo-2Hm" secondAttribute="leading" constant="7" id="QDh-LV-l51"/>
+                                                                <constraint firstAttribute="bottom" secondItem="4Wi-ER-wS8" secondAttribute="bottom" id="R97-Fl-M1v"/>
+                                                                <constraint firstItem="4Wi-ER-wS8" firstAttribute="top" secondItem="aGb-Lo-2Hm" secondAttribute="top" id="iGO-PK-wab"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="aGb-Lo-2Hm" firstAttribute="top" secondItem="ZBK-NY-hj9" secondAttribute="bottom" constant="10" id="LAd-e3-hRZ"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="cCS-j7-ruP" secondAttribute="trailing" constant="10" id="8Uj-Zs-WIm"/>
+                                                <constraint firstItem="cCS-j7-ruP" firstAttribute="top" secondItem="fxN-rW-Bvb" secondAttribute="top" constant="10" id="BvA-Xm-CPA"/>
+                                                <constraint firstAttribute="bottom" secondItem="cCS-j7-ruP" secondAttribute="bottom" id="J2Q-6Y-p3c"/>
+                                                <constraint firstItem="cCS-j7-ruP" firstAttribute="leading" secondItem="fxN-rW-Bvb" secondAttribute="leading" constant="10" id="REZ-TX-vBG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="chatStack" destination="cCS-j7-ruP" id="o0W-Fr-YGk"/>
+                                            <outlet property="chatTextBubble" destination="aGb-Lo-2Hm" id="mRa-Mp-ssP"/>
+                                            <outlet property="chatTextView" destination="4Wi-ER-wS8" id="1vb-NE-1da"/>
+                                            <outlet property="userNameLabel" destination="ZBK-NY-hj9" id="SaW-PJ-ecI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SMJ-yC-Nk6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gb0-WW-cjZ" firstAttribute="bottom" secondItem="SMJ-yC-Nk6" secondAttribute="bottom" id="0Lw-m2-LNf"/>
                             <constraint firstItem="gb0-WW-cjZ" firstAttribute="trailing" secondItem="SMJ-yC-Nk6" secondAttribute="trailing" id="DxT-PZ-Ett"/>
+                            <constraint firstItem="URA-5o-r3y" firstAttribute="top" secondItem="SMJ-yC-Nk6" secondAttribute="top" id="Kot-59-NjG"/>
+                            <constraint firstItem="URA-5o-r3y" firstAttribute="leading" secondItem="SMJ-yC-Nk6" secondAttribute="leading" id="Or9-au-K5E"/>
+                            <constraint firstItem="URA-5o-r3y" firstAttribute="trailing" secondItem="SMJ-yC-Nk6" secondAttribute="trailing" id="Z79-Io-dZq"/>
                             <constraint firstItem="gb0-WW-cjZ" firstAttribute="leading" secondItem="SMJ-yC-Nk6" secondAttribute="leading" id="vYY-2z-CTI"/>
+                            <constraint firstItem="gb0-WW-cjZ" firstAttribute="top" secondItem="URA-5o-r3y" secondAttribute="bottom" constant="10" id="wzZ-7C-frL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HKl-Yp-YNh"/>
                     <connections>
+                        <outlet property="chatTableView" destination="URA-5o-r3y" id="bCS-bF-c07"/>
                         <outlet property="chatTextField" destination="EXS-lz-DDb" id="kWt-cd-TJr"/>
                     </connections>
                 </viewController>
@@ -569,8 +643,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tNu-qD-7E2"/>
+        <segue reference="uhM-9a-62e"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Chat Room Background" width="375" height="812"/>
         <image name="White Chat Room" width="321" height="75"/>
@@ -592,11 +667,14 @@
         <namedColor name="TabBarTint">
             <color red="0.38400000333786011" green="0.20399999618530273" blue="0.83499997854232788" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
