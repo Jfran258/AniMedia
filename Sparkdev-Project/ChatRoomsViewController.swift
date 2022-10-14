@@ -20,6 +20,9 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         roomsTableView.delegate = self
         roomsTableView.dataSource = self
         
+        // Make back button title blank
+        navigationItem.backButtonTitle = ""
+        
         // Loading the rooms from Firebase into our view
         getRooms()
     }
