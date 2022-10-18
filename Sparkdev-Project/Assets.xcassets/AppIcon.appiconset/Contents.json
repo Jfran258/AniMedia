@@ -1,61 +1,61 @@
 {
   "images" : [
     {
-      "filename" : "iPad_20pt@2x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-20@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "iPhone_20pt@3x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-20@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "iPad_29pt.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-29.png",
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "iPad_29pt@2x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-29@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "iPhone_29pt@3x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-29@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "iPad_40@2x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-40@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "iPhone_40pt@3x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-40@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "iPhone_60pt@2x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-60@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "iPhone_60pt@3x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-60@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "iPad_20pt.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-20.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
@@ -79,7 +79,7 @@
       "size" : "29x29"
     },
     {
-      "filename" : "iPad_40pt.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-40.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
@@ -91,25 +91,25 @@
       "size" : "40x40"
     },
     {
-      "filename" : "iPad_76pt.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "iPad_76@2x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-76@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "iPad_83.5pt@2x.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-83.5@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "App Icon iOS.png",
+      "filename" : "Screen Shot 2022-10-18 at 4.07.25 PM-1024.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
