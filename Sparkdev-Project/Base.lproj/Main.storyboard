@@ -21,7 +21,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRa-re-8ZN">
                                 <rect key="frame" x="0.0" y="0.0" width="436" height="926"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="X - 1" translatesAutoresizingMaskIntoConstraints="NO" id="7hF-xb-8vQ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Main Background" translatesAutoresizingMaskIntoConstraints="NO" id="7hF-xb-8vQ">
                                         <rect key="frame" x="0.0" y="-143" width="428" height="926"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -107,7 +107,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
                                     <action selector="Login:" destination="hgA-Xu-4LN" eventType="touchUpInside" id="ENv-nL-To1"/>
-                                    <segue destination="wbs-kD-yLj" kind="presentation" identifier="LoginTab" id="Ecw-Gg-ftb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email Address:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bP-Z2-DK8">
@@ -164,11 +163,12 @@
                         <outlet property="Login_Button" destination="tHW-B0-WR6" id="R03-0J-pmK"/>
                         <outlet property="Password_Input" destination="Aoa-sD-Puu" id="T6Q-yv-Yo9"/>
                         <outlet property="Spark_Messege" destination="fiz-k5-ATR" id="A1B-Ej-Nzi"/>
+                        <segue destination="wbs-kD-yLj" kind="presentation" identifier="LoginTab" id="Bd5-4m-C57"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AFQ-IU-9nC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2136.4485981308412" y="13.606911447084235"/>
+            <point key="canvasLocation" x="-998" y="69"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Bvd-gq-3sZ">
@@ -265,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laI-ww-yfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-374.29906542056074" y="-433.47732181425488"/>
+            <point key="canvasLocation" x="-998" y="827"/>
         </scene>
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="KUY-99-b20">
@@ -302,7 +302,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="X - 1" translatesAutoresizingMaskIntoConstraints="NO" id="S8s-ef-0Dl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Main Background" translatesAutoresizingMaskIntoConstraints="NO" id="S8s-ef-0Dl">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -330,7 +330,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="X - 1" translatesAutoresizingMaskIntoConstraints="NO" id="CiU-vl-Xfn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Main Background" translatesAutoresizingMaskIntoConstraints="NO" id="CiU-vl-Xfn">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -464,7 +464,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="X - 1" translatesAutoresizingMaskIntoConstraints="NO" id="Jzx-Uo-xXV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Main Background" translatesAutoresizingMaskIntoConstraints="NO" id="Jzx-Uo-xXV">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -626,7 +626,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="X - 1" translatesAutoresizingMaskIntoConstraints="NO" id="b9h-7i-gxL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Main Background" translatesAutoresizingMaskIntoConstraints="NO" id="b9h-7i-gxL">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -659,7 +659,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4U-ZW-5y4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3342" y="14"/>
+            <point key="canvasLocation" x="-2854" y="69"/>
         </scene>
         <!--Chat-->
         <scene sceneID="oyY-zj-gax">
@@ -686,15 +686,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YIq-uM-6zh"/>
-        <segue reference="Ecw-Gg-ftb"/>
+        <segue reference="tNu-qD-7E2"/>
         <segue reference="F2P-ic-ZlV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Chat Room Background" width="375" height="812"/>
+        <image name="Main Background" width="375" height="812"/>
         <image name="White Chat Room" width="321" height="75"/>
-        <image name="X - 1" width="375" height="812"/>
         <image name="comment" width="24" height="24"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="news" width="24" height="24"/>
