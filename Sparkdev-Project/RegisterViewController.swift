@@ -17,6 +17,41 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var passwordemail: UITextField!
     
+    @IBOutlet weak var App_Name: UILabel!
+    
+    @IBOutlet weak var Register_Button: UIButton!
+    
+    @IBOutlet weak var Spark_Message: UILabel!
+    override func viewDidLoad() {
+        view.backgroundColor = UIColor(red: 31/255, green: 35/255, blue: 41/255, alpha: 1)
+        
+        registeremail.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        registeremail.layer.cornerRadius = 22
+        registeremail.borderStyle = .none
+        
+        passwordemail.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        passwordemail.layer.cornerRadius = 22
+        passwordemail.borderStyle = .none
+        
+        username.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        username.layer.cornerRadius = 22
+        username.borderStyle = .none
+        
+        Register_Button.layer.cornerRadius = 17
+        
+        
+        let App_N = "AniMedia"
+        let attributeText = NSMutableAttributedString(string: App_N)
+        attributeText.addAttribute(.foregroundColor, value: UIColor.systemCyan, range: NSRange(location: 3, length: 5))
+        App_Name.attributedText = attributeText
+        
+        
+        let Spark_M = "SparkDev iOS Fall 2022"
+        let attribute_M = NSMutableAttributedString(string: Spark_M)
+        attribute_M.addAttribute(.foregroundColor, value: UIColor.systemRed, range: NSRange(location: 0, length: 8))
+        Spark_Message.attributedText = attribute_M
+        
+    }
     @IBAction func Register(_ sender: UIButton) {
         
         if let email = registeremail.text, let password =  passwordemail.text {
