@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -102,14 +103,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHW-B0-WR6">
                                 <rect key="frame" x="121" y="545" width="187" height="34.333333333333371"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
                                     <action selector="Login:" destination="hgA-Xu-4LN" eventType="touchUpInside" id="ENv-nL-To1"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email Address:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bP-Z2-DK8">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="user@gmail.com" borderStyle="line" placeholder="Email Address:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bP-Z2-DK8">
                                 <rect key="frame" x="74" y="422" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,7 +119,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aoa-sD-Puu">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="line" placeholder="Password:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aoa-sD-Puu">
                                 <rect key="frame" x="74" y="484" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,7 +148,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                    <color key="baseForegroundColor" red="0.10980392156862745" green="0.70980392156862748" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="0oq-ZF-Qvv" kind="presentation" id="YIq-uM-6zh"/>
@@ -155,6 +156,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bGC-3L-0jq"/>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.13725490196078433" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="UgP-b0-wca"/>
                     <connections>
@@ -222,7 +224,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                    <color key="baseForegroundColor" red="0.10980392156862745" green="0.70980392156862748" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="hgA-Xu-4LN" kind="presentation" modalPresentationStyle="fullScreen" id="F2P-ic-ZlV"/>
@@ -251,6 +253,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z3j-kM-5lu"/>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.13725490196078433" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="2ym-B6-w08"/>
                     <connections>
@@ -354,7 +357,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2bb-VL-JRy">
-                                <rect key="frame" x="0.0" y="138" width="428" height="705"/>
+                                <rect key="frame" x="0.0" y="189.66666666666663" width="428" height="653.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -497,7 +500,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="55"/>
                                         <subviews>
                                             <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXS-lz-DDb">
-                                                <rect key="frame" x="15" y="0.0" width="328" height="55"/>
+                                                <rect key="frame" x="15" y="0.0" width="343" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -508,7 +512,7 @@
                                             <constraint firstAttribute="bottom" secondItem="EXS-lz-DDb" secondAttribute="bottom" id="68Q-Kc-IAf"/>
                                             <constraint firstItem="EXS-lz-DDb" firstAttribute="top" secondItem="rCB-PL-gkF" secondAttribute="top" id="Rho-bU-3UP"/>
                                             <constraint firstItem="EXS-lz-DDb" firstAttribute="leading" secondItem="rCB-PL-gkF" secondAttribute="leading" constant="15" id="uhR-5G-OKS"/>
-                                            <constraint firstAttribute="trailing" secondItem="EXS-lz-DDb" secondAttribute="trailing" constant="15" id="yQt-0Y-Fgj"/>
+                                            <constraint firstAttribute="trailing" secondItem="EXS-lz-DDb" secondAttribute="trailing" id="yQt-0Y-Fgj"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qX-Cs-nGJ">
@@ -518,8 +522,9 @@
                                             <constraint firstAttribute="width" constant="70" id="Zbg-Uh-Bk9"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Send">
-                                            <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <imageReference key="image" image="paperplane.fill" catalog="system" symbolScale="large"/>
+                                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="sendButtonPressed:" destination="hkF-E6-7oE" eventType="touchUpInside" id="cGQ-iU-uqg"/>
@@ -698,6 +703,7 @@
         <image name="comment" width="24" height="24"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="news" width="24" height="24"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <image name="user" width="24" height="24"/>
         <image name="watchlist" width="24" height="24"/>
         <namedColor name="BlurBackground">
@@ -715,17 +721,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
