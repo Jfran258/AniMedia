@@ -22,22 +22,21 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var Register_Button: UIButton!
     
     @IBOutlet weak var Spark_Message: UILabel!
+    
     override func viewDidLoad() {
-        view.backgroundColor = UIColor(red: 31/255, green: 35/255, blue: 41/255, alpha: 1)
-        
         registeremail.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-        registeremail.layer.cornerRadius = 22
+        registeremail.layer.cornerRadius = 15
         registeremail.borderStyle = .none
         
         passwordemail.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-        passwordemail.layer.cornerRadius = 22
+        passwordemail.layer.cornerRadius = 15
         passwordemail.borderStyle = .none
         
         username.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-        username.layer.cornerRadius = 22
+        username.layer.cornerRadius = 15
         username.borderStyle = .none
         
-        Register_Button.layer.cornerRadius = 17
+        Register_Button.layer.cornerRadius = 15
         
         
         let App_N = "AniMedia"
@@ -52,6 +51,7 @@ class RegisterViewController: UIViewController {
         Spark_Message.attributedText = attribute_M
         
     }
+    
     @IBAction func Register(_ sender: UIButton) {
         
         if let email = registeremail.text, let password =  passwordemail.text {

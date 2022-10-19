@@ -46,7 +46,7 @@ class ChatCell: UITableViewCell {
             chatTextView.textColor = .black
         } else if (type == .outgoing) {
             chatStack.alignment = .trailing
-            chatTextBubble.backgroundColor = #colorLiteral(red: 1, green: 0.4352941176, blue: 0.7411764706, alpha: 1)
+            chatTextBubble.backgroundColor = #colorLiteral(red: 0.003921568627, green: 0.7647058824, blue: 1, alpha: 1)
             chatTextView.textColor = .white
             userNameLabel.text = ""
         }
