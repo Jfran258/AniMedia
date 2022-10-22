@@ -66,6 +66,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492B8C44290388DF003AB645 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				714FF7E328FF347000401EF0 /* LaunchViewController.swift */,
+				BC7CF9C828DF7D740023768A /* ViewController.swift */,
+				714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */,
+				BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */,
+				BCC7B77D28DFF181009439E2 /* CustomTabBarViewController.swift */,
+				492DDFA928F3A633009FECDD /* ChatRoomsViewController.swift */,
+				492DDFAB28F3A9EF009FECDD /* CreateChatViewController.swift */,
+				492DDFAF28F3CC5E009FECDD /* ChatRoomViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		492B8C4629038930003AB645 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				492B8C48290389BE003AB645 /* Storyboards */,
+				497074F728F4744A0098ED47 /* RoomCell.swift */,
+				49A1B31728F79C74000E1DDF /* ChatCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		492B8C4729038976003AB645 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				492DDFAD28F3AC70009FECDD /* Room.swift */,
+				49A1B31928F7A11E000E1DDF /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		492B8C48290389BE003AB645 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BC7CF9CA28DF7D740023768A /* Main.storyboard */,
+				BC7CF9CF28DF7D740023768A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		6046AC83F914016AE4B82BEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,25 +138,14 @@
 		BC7CF9C328DF7D740023768A /* Sparkdev-Project */ = {
 			isa = PBXGroup;
 			children = (
+				492B8C4729038976003AB645 /* Model */,
+				492B8C4629038930003AB645 /* View */,
+				492B8C44290388DF003AB645 /* Controllers */,
 				BC7CF9C428DF7D740023768A /* AppDelegate.swift */,
 				BC7CF9C628DF7D740023768A /* SceneDelegate.swift */,
-				BC7CF9C828DF7D740023768A /* ViewController.swift */,
-				BC7CF9CA28DF7D740023768A /* Main.storyboard */,
-				714FF7E328FF347000401EF0 /* LaunchViewController.swift */,
-				714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */,
-				BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */,
 				BC7CF9CD28DF7D740023768A /* Assets.xcassets */,
-				BC7CF9CF28DF7D740023768A /* LaunchScreen.storyboard */,
 				BC7CF9D228DF7D740023768A /* Info.plist */,
 				BCC3282228F4B7590055C1C7 /* GoogleService-Info.plist */,
-				BCC7B77D28DFF181009439E2 /* CustomTabBarViewController.swift */,
-				492DDFA928F3A633009FECDD /* ChatRoomsViewController.swift */,
-				492DDFAB28F3A9EF009FECDD /* CreateChatViewController.swift */,
-				492DDFAD28F3AC70009FECDD /* Room.swift */,
-				492DDFAF28F3CC5E009FECDD /* ChatRoomViewController.swift */,
-				497074F728F4744A0098ED47 /* RoomCell.swift */,
-				49A1B31728F79C74000E1DDF /* ChatCell.swift */,
-				49A1B31928F7A11E000E1DDF /* Message.swift */,
 			);
 			path = "Sparkdev-Project";
 			sourceTree = "<group>";
