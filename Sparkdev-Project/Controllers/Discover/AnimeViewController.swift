@@ -14,6 +14,8 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var upcomingShowsCollectionView: UICollectionView!
     
+    @IBOutlet weak var topShowsCollectionView: UICollectionView!
+    
     var currentlyAiringShows = [[String:Any]]()
     var upcomingShows = [[String:Any]]()
     var topShows = [[String:Any]]()
@@ -27,12 +29,14 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
         upcomingShowsCollectionView.delegate = self
         upcomingShowsCollectionView.dataSource = self
         
+        topShowsCollectionView.delegate = self
+        topShowsCollectionView.dataSource = self
+        
         navigationItem.backButtonTitle = ""
         
-        //https://api.jikan.moe/v4/seasons/now
-        //https://api.jikan.moe/v4/seasons/upcoming
-        //https://api.jikan.moe/v4/top/anime
+        //https://api.jikan.moe/v4/seasons/2022/summer
         //https://api.jikan.moe/v4/anime?q=kimetsu%20no%20yaiba&sfw
+        //https://api.jikan.moe/v4/top/manga
         getShowsData(urlString: "https://api.jikan.moe/v4/seasons/now", showData: "currentlyAiringShows")
         getShowsData(urlString: "https://api.jikan.moe/v4/seasons/upcoming", showData: "upcomingShows")
         getShowsData(urlString: "https://api.jikan.moe/v4/top/anime", showData: "topShows")
@@ -71,14 +75,14 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
                 else if showData == "topShows" {
                     self.topShows = dataDictionary["data"] as! [[String:Any]]
                     
-                    //self.topShowsCollectionView.reloadData()
+                    self.topShowsCollectionView.reloadData()
                 }
                 
                 // Accessing Nested JSON Data
                 for show in self.topShows {
                     // Show title
                     let title = show["title"] as! String
-                    print(title)
+                    //print(title)
                     
                     // Synopsis
                     let synopsis = show["synopsis"]// as! String
@@ -131,8 +135,10 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
             return currentlyAiringShows.count
         } else if collectionView == self.upcomingShowsCollectionView {
             return upcomingShows.count
+        } else if collectionView == self.topShowsCollectionView {
+            return topShows.count
         } else {
-            return 5
+            return 4
         }
     }
     
@@ -189,6 +195,32 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
             cell.posterView.layer.cornerRadius = 10
             
             return cell
+        }
+        // What to display for the top shows row
+        else if collectionView == self.topShowsCollectionView {
+            // Create the cell to be displayed
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopShowCell", for: indexPath) as! TopShowCell
+            
+            // Get the show
+            let show = topShows[indexPath.item]
+
+            // Set the title
+            let title = show["title"] as! String
+            cell.titleLabel.text = title
+            
+            // Set the poster
+            if let images = show["images"] as? [String: AnyObject] {
+                if let jpg = images["jpg"] {
+                    if let imageUrl = jpg["image_url"] as? String {
+                        let newUrl = URL(string: imageUrl)
+                        cell.posterView.af.setImage(withURL: newUrl!)
+                    }
+                }
+            }
+            
+            cell.posterView.layer.cornerRadius = 10
+            
+            return cell
         } else {
             // Create the cell to be displayed
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimeGridCell", for: indexPath) as! CurrentlyAiringShowCell
@@ -221,6 +253,19 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             // The selected show
             let show = upcomingShows[indexPath.item]
+            
+            // Passing selected show to details screen
+            animeDetailsView.anime = show
+            
+            // segue to details screen
+            self.navigationController?.pushViewController(animeDetailsView, animated: true)
+        }
+        // When a show from the top shows row is selected
+        else if collectionView == self.topShowsCollectionView {
+            let animeDetailsView = self.storyboard?.instantiateViewController(withIdentifier: "animeDetail") as! AnimeDetailsViewController
+            
+            // The selected show
+            let show = topShows[indexPath.item]
             
             // Passing selected show to details screen
             animeDetailsView.anime = show
