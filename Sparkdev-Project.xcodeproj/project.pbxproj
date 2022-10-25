@@ -11,6 +11,7 @@
 		492DDFAC28F3A9EF009FECDD /* CreateChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DDFAB28F3A9EF009FECDD /* CreateChatViewController.swift */; };
 		492DDFAE28F3AC70009FECDD /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DDFAD28F3AC70009FECDD /* Room.swift */; };
 		492DDFB028F3CC5E009FECDD /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DDFAF28F3CC5E009FECDD /* ChatRoomViewController.swift */; };
+		4945C8992908555200FB674C /* TopShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945C8982908555200FB674C /* TopShowCell.swift */; };
 		497074F828F4744B0098ED47 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497074F728F4744A0098ED47 /* RoomCell.swift */; };
 		499BCE4A29072AB40035BA71 /* AnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BCE4929072AB40035BA71 /* AnimeViewController.swift */; };
 		499BCE4D29072D010035BA71 /* CurrentlyAiringShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BCE4C29072D010035BA71 /* CurrentlyAiringShowCell.swift */; };
@@ -36,6 +37,7 @@
 		492DDFAB28F3A9EF009FECDD /* CreateChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatViewController.swift; sourceTree = "<group>"; };
 		492DDFAD28F3AC70009FECDD /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		492DDFAF28F3CC5E009FECDD /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		4945C8982908555200FB674C /* TopShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopShowCell.swift; sourceTree = "<group>"; };
 		497074F728F4744A0098ED47 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		499BCE4929072AB40035BA71 /* AnimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeViewController.swift; sourceTree = "<group>"; };
 		499BCE4C29072D010035BA71 /* CurrentlyAiringShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyAiringShowCell.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				499BCE5029077B650035BA71 /* UpcomingShowCell.swift */,
 				499BCE4C29072D010035BA71 /* CurrentlyAiringShowCell.swift */,
+				4945C8982908555200FB674C /* TopShowCell.swift */,
 				497074F728F4744A0098ED47 /* RoomCell.swift */,
 				49A1B31728F79C74000E1DDF /* ChatCell.swift */,
 			);
@@ -330,6 +333,7 @@
 				499BCE4F29072D3D0035BA71 /* AnimeDetailsViewController.swift in Sources */,
 				492DDFAA28F3A633009FECDD /* ChatRoomsViewController.swift in Sources */,
 				BC7CF9C728DF7D740023768A /* SceneDelegate.swift in Sources */,
+				4945C8992908555200FB674C /* TopShowCell.swift in Sources */,
 				499BCE4D29072D010035BA71 /* CurrentlyAiringShowCell.swift in Sources */,
 				714FF7E428FF347000401EF0 /* LaunchViewController.swift in Sources */,
 				499BCE5129077B650035BA71 /* UpcomingShowCell.swift in Sources */,
