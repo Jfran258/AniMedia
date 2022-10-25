@@ -18,15 +18,8 @@ class CustomTabBarViewController: UITabBarController {
         self.tabBar.layer.masksToBounds = true
         self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-       
         self.additionalSafeAreaInsets.bottom = 0
                
-        
-        
-    
+        self.selectedIndex = 2
     }
-    
-
- 
-
 }
