@@ -39,7 +39,7 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
         //https://api.jikan.moe/v4/top/manga
         getShowsData(urlString: "https://api.jikan.moe/v4/seasons/now", showData: "currentlyAiringShows")
         getShowsData(urlString: "https://api.jikan.moe/v4/seasons/upcoming", showData: "upcomingShows")
-        getShowsData(urlString: "https://api.jikan.moe/v4/top/anime", showData: "topShows")
+        getShowsData(urlString: "https://api.jikan.moe/v4/top/anime?filter=bypopularity", showData: "topShows")
     }
     
     // Function for parsing JSON data from given API url
