@@ -22,7 +22,14 @@ class AnimeDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         titleLabel.text = anime["title"] as! String
-        synopsisLabel.text = anime["synopsis"] as! String
+        //synopsisLabel.text = anime["synopsis"] as! String
+        
+        // If not nil
+        if let synopsis = anime["synopsis"] as? String {
+            synopsisLabel.text = synopsis
+        } else {
+            synopsisLabel.text = "N/A"
+        }
         //print(anime["season"] as! String)
         
         
