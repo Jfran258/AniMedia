@@ -18,6 +18,7 @@ class LoginsViewController: UIViewController {
     @IBOutlet weak var App_Name: UILabel!
     @IBOutlet weak var Password_Input: UITextField!
     @IBOutlet weak var Email_Input: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +35,7 @@ class LoginsViewController: UIViewController {
         Login_Button.layer.cornerRadius = 17
         
         
+        
         let App_N = "AniMedia"
         let attributeText = NSMutableAttributedString(string: App_N)
         attributeText.addAttribute(.foregroundColor, value: UIColor.systemCyan, range: NSRange(location: 3, length: 5))
@@ -48,20 +50,50 @@ class LoginsViewController: UIViewController {
         
     }
     
+    func validateFileds() {
+        if Email_Input.text?.isEmpty == true {
+            print("No Email Text")
+            return
+        }
+        if Password_Input.text?.isEmpty == true {
+            print("No Password Text")
+            return
+        }
+    }
+    func checkUserInfo() {
+        if Auth.auth().currentUser != nil {
+            //print(Auth.auth().currentUser?.uid)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Home")
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        } else {
+            self.showAlert(title: "ERROR!", messege: "This is not a valid email. Please Try Again")
+        }
+    }
     @IBAction func Login(_ sender: UIButton) {
         if let email = Email_Input.text, let password = Password_Input.text {
             
             Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
                 
                 // ...
-                if let e = error {
-                    print(e)
+                
+                if error != nil {
+                    //print(e)
+                    self.showAlert(title: "ERROR!", messege: "This is not a valid email. Please Try Again")
                 } else {
-                    self.performSegue(withIdentifier: "LoginTab", sender: self)
+                    self.checkUserInfo()
+                    //self.performSegue(withIdentifier: "LoginTab", sender: self)
                 }
             }
         }
     }
+    func showAlert(title: String, messege: String) {
+        let alert = UIAlertController(title: title, message: messege, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     
     

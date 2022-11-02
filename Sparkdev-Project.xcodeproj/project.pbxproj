@@ -17,6 +17,7 @@
 		52B07654BF4FAACF6B9D3FA1 /* Pods_Sparkdev_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57CF43A70995262F1224578 /* Pods_Sparkdev_Project.framework */; };
 		714FF7E228FD9BE700401EF0 /* LoginsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */; };
 		714FF7E428FF347000401EF0 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714FF7E328FF347000401EF0 /* LaunchViewController.swift */; };
+		716DE6A6290B420100E829D4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DE6A5290B420100E829D4 /* ProfileViewController.swift */; };
 		BC5F6E8728E7341700A53C99 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */; };
 		BC5F6E8928E7342700A53C99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F6E8828E7342700A53C99 /* LoginViewController.swift */; };
 		BC7CF9C528DF7D740023768A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CF9C428DF7D740023768A /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 		49A1B31928F7A11E000E1DDF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginsViewController.swift; sourceTree = "<group>"; };
 		714FF7E328FF347000401EF0 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		716DE6A5290B420100E829D4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		94EB3D5CBF19B77CB25C345A /* Pods-Sparkdev-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparkdev-Project.release.xcconfig"; path = "Target Support Files/Pods-Sparkdev-Project/Pods-Sparkdev-Project.release.xcconfig"; sourceTree = "<group>"; };
 		BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BC5F6E8828E7342700A53C99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				BC7CF9C628DF7D740023768A /* SceneDelegate.swift */,
 				BC7CF9C828DF7D740023768A /* ViewController.swift */,
 				BC7CF9CA28DF7D740023768A /* Main.storyboard */,
+				716DE6A5290B420100E829D4 /* ProfileViewController.swift */,
 				714FF7E328FF347000401EF0 /* LaunchViewController.swift */,
 				714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */,
 				BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */,
@@ -256,6 +259,7 @@
 				BC7CF9C528DF7D740023768A /* AppDelegate.swift in Sources */,
 				492DDFAC28F3A9EF009FECDD /* CreateChatViewController.swift in Sources */,
 				49A1B31828F79C75000E1DDF /* ChatCell.swift in Sources */,
+				716DE6A6290B420100E829D4 /* ProfileViewController.swift in Sources */,
 				492DDFAE28F3AC70009FECDD /* Room.swift in Sources */,
 				497074F828F4744B0098ED47 /* RoomCell.swift in Sources */,
 				BCC7B77E28DFF182009439E2 /* CustomTabBarViewController.swift in Sources */,
