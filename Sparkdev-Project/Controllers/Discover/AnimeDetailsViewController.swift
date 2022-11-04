@@ -14,29 +14,25 @@ class AnimeDetailsViewController: UIViewController {
     var anime: [String:Any]!
     
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var synopsisLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Set title
         titleLabel.text = anime["title"] as! String
-        //synopsisLabel.text = anime["synopsis"] as! String
         
-        // If not nil
+        // Set synopsis
         if let synopsis = anime["synopsis"] as? String {
             synopsisLabel.text = synopsis
         } else {
             synopsisLabel.text = "N/A"
         }
-        //print(anime["season"] as! String)
         
         
-        titleLabel.sizeToFit()
-        synopsisLabel.sizeToFit()
     }
     
+    // Hides tab bar
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
     }
