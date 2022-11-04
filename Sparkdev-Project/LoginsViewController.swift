@@ -28,9 +28,18 @@ class LoginsViewController: UIViewController {
         Email_Input.borderStyle = .none
         Email_Input.layer.cornerRadius = 22
         
+        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        Email_Input.leftView = paddingView
+        Email_Input.leftViewMode = .always
+        
         Password_Input.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         Password_Input.borderStyle = .none
         Password_Input.layer.cornerRadius = 22
+        
+        let paddingViews: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        Password_Input.leftView = paddingViews
+        Password_Input.leftViewMode = .always
+        
         
         Login_Button.layer.cornerRadius = 17
         
@@ -42,10 +51,7 @@ class LoginsViewController: UIViewController {
         App_Name.attributedText = attributeText
         
         
-        let Spark_M = "SparkDev iOS Fall 2022"
-        let attribute_M = NSMutableAttributedString(string: Spark_M)
-        attribute_M.addAttribute(.foregroundColor, value: UIColor.systemRed, range: NSRange(location: 0, length: 8))
-        Spark_Messege.attributedText = attribute_M
+        navigationItem.backButtonTitle = ""
         
         
     }
@@ -63,13 +69,18 @@ class LoginsViewController: UIViewController {
     func checkUserInfo() {
         if Auth.auth().currentUser != nil {
             //print(Auth.auth().currentUser?.uid)
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Home")
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
-        } else {
-            self.showAlert(title: "ERROR!", messege: "This is not a valid email. Please Try Again")
-        }
+        } 
+    }
+    
+    @IBAction func SignUp(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Register")
+        navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func Login(_ sender: UIButton) {
         if let email = Email_Input.text, let password = Password_Input.text {
@@ -77,10 +88,12 @@ class LoginsViewController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
                 
                 // ...
-                
-                if error != nil {
+                if email == "" || password == "" {
+                    self.showAlert(title: "ERROR!", messege: "Please fill out the empty fields")
+                }
+                else if error != nil {
                     //print(e)
-                    self.showAlert(title: "ERROR!", messege: "This is not a valid email. Please Try Again")
+                    self.showAlert(title: "ERROR!", messege: "Login or Password is invalid")
                 } else {
                     self.checkUserInfo()
                     //self.performSegue(withIdentifier: "LoginTab", sender: self)

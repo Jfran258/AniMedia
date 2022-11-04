@@ -33,13 +33,26 @@ class RegisterViewController: UIViewController {
         registeremail.layer.cornerRadius = 22
         registeremail.borderStyle = .none
         
+        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        registeremail.leftView = paddingView
+        registeremail.leftViewMode = .always
+        
         passwordemail.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
         passwordemail.layer.cornerRadius = 22
         passwordemail.borderStyle = .none
+        passwordemail.textContentType = .oneTimeCode
+        
+        let paddingViews: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        passwordemail.leftView = paddingViews
+        passwordemail.leftViewMode = .always
         
         username.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
         username.layer.cornerRadius = 22
         username.borderStyle = .none
+        
+        let paddingViewss: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        username.leftView = paddingViewss
+        username.leftViewMode = .always
         
         Register_Button.layer.cornerRadius = 17
         
@@ -50,26 +63,27 @@ class RegisterViewController: UIViewController {
         App_Name.attributedText = attributeText
         
         
-        
-        
-        /*
-        let attribute_M = NSMutableAttributedString(string: Spark_M)
-        let newLayer = CAGradientLayer()
-        newLayer.colors = [UIColor.blue.cgColor, UIColor.orange.cgColor]
-        attribute_M.addAttribute(.foregroundColor, value: newLayer, range: NSRange(location: 0, length: 8))
-        //attribute_M.addAttribute(.foregroundColor, value: UIColor.systemRed, range: NSRange(location: 0, length: 8))
-        Spark_Message.attributedText = attribute_M
-        
-        */
-        
     }
     
+    @IBAction func ReturnLogin(_ sender: Any) {
+        _ = UIStoryboard(name: "Main", bundle: nil)
+        //let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+        navigationController?.popViewController(animated: true)
+        /*
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+         */
+    }
     @IBAction func Register(_ sender: UIButton) {
             if let email = registeremail.text, let password =  passwordemail.text {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if let e = error {
-                        print(e.localizedDescription)
-                        self.showError()
+                        if (self.username.text == "" || email == "" || password == "") {
+                            self.showAlert(title: "ERROR!", messege: "Please fill out the empty fields")
+                        } else {
+                            self.showAlert(title: "ERROR!", messege: e.localizedDescription)
+                        }
+                        //self.showError()
                     } else {
                         guard let userId = authResult?.user.uid, let userName = self.username.text else {
                             return
@@ -100,7 +114,7 @@ class RegisterViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
         self.present(alert, animated: true, completion: nil)
     }
-    
+    /*
     func showError() {
         let email = isEmailValid(testStr: registeremail.text!)
         let password = isPasswordValid(testStr: passwordemail.text!)
@@ -108,25 +122,27 @@ class RegisterViewController: UIViewController {
             showAlert(title: "ERROR!", messege: "This is not a valid email. Please Try Again")
             registeremail.text = ""
         }
+        
         else if password == false {
             showAlert(title: "ERROR!", messege: "This is not a valid password. Please Try Again")
             passwordemail.text = ""
         }
+         
     
     }
      func isPasswordValid(testStr: String) -> Bool {
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+         let passwordExpression = "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}"
+         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordExpression)
+        //let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: testStr)
     }
     
     func isEmailValid(testStr: String) -> Bool {
-       // let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let test = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
-        //let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return test.evaluate(with: testStr)
-        //"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}
         
     }
+     */
     func checkUserInfo() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Home")
