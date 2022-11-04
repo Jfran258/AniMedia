@@ -42,6 +42,15 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
         getShowsData(urlString: "https://api.jikan.moe/v4/top/anime?filter=bypopularity", showData: "topShows")
     }
     
+    // Segue to search view
+    @IBAction func searchButton(_ sender: UIButton) {
+        // Create the view to be opened
+        let searchView = self.storyboard?.instantiateViewController(withIdentifier: "searchView") as! SearchViewController
+        
+        // segue to details screen
+        self.navigationController?.pushViewController(searchView, animated: false)
+    }
+    
     // Function for parsing JSON data from given API url
     func getShowsData(urlString: String, showData: String) {
         // URL of API to parse JSON from
