@@ -21,9 +21,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label verifyAmbiguity="ignoreSizes" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AniMedia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8H-FC-ots">
-                                <rect key="frame" x="90" y="108" width="249" height="74"/>
+                                <rect key="frame" x="90" y="108" width="250" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="62"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -34,7 +34,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
-                                    <action selector="Login:" destination="hgA-Xu-4LN" eventType="touchUpInside" id="ENv-nL-To1"/>
+                                    <action selector="Login:" destination="hgA-Xu-4LN" eventType="touchUpInside" id="LUi-bN-2fa"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="user@gmail.com" borderStyle="line" placeholder="Email Address:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bP-Z2-DK8">
@@ -62,13 +62,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SparkDev iOS Fall 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiz-k5-ATR">
-                                <rect key="frame" x="124" y="862" width="180" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou8-Se-pfJ">
                                 <rect key="frame" x="244" y="591" width="70" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,9 +71,13 @@
                                     <color key="baseForegroundColor" red="0.10980392156862745" green="0.70980392156862748" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="0oq-ZF-Qvv" kind="presentation" id="YIq-uM-6zh"/>
+                                    <action selector="Sign_Up:" destination="hgA-Xu-4LN" eventType="touchUpInside" id="g6P-eR-y6P"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screenshot 2022-11-04 at 1.12.41 PM" translatesAutoresizingMaskIntoConstraints="NO" id="7dT-UD-dvi">
+                                <rect key="frame" x="125" y="855" width="180" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bGC-3L-0jq"/>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.13725490196078433" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,18 +88,16 @@
                         <outlet property="Email_Input" destination="3bP-Z2-DK8" id="lLH-a7-Hh7"/>
                         <outlet property="Login_Button" destination="tHW-B0-WR6" id="R03-0J-pmK"/>
                         <outlet property="Password_Input" destination="Aoa-sD-Puu" id="T6Q-yv-Yo9"/>
-                        <outlet property="Spark_Messege" destination="fiz-k5-ATR" id="A1B-Ej-Nzi"/>
-                        <segue destination="wbs-kD-yLj" kind="presentation" identifier="LoginTab" id="Bd5-4m-C57"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AFQ-IU-9nC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-998" y="69"/>
+            <point key="canvasLocation" x="-1815.4205607476636" y="68.682505399568043"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Bvd-gq-3sZ">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="0oq-ZF-Qvv" customClass="RegisterViewController" customModule="Sparkdev_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Register" modalPresentationStyle="fullScreen" id="0oq-ZF-Qvv" customClass="RegisterViewController" customModule="Sparkdev_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gbu-8s-g2L">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +137,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Register"/>
                                 <connections>
-                                    <action selector="Register:" destination="0oq-ZF-Qvv" eventType="touchUpInside" id="myQ-Cc-AOs"/>
+                                    <action selector="Register:" destination="0oq-ZF-Qvv" eventType="touchUpInside" id="X1X-Ea-h0g"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twf-g7-2WW">
@@ -154,20 +149,13 @@
                                     <color key="baseForegroundColor" red="0.10980392156862745" green="0.70980392156862748" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="hgA-Xu-4LN" kind="presentation" modalPresentationStyle="fullScreen" id="F2P-ic-ZlV"/>
+                                    <action selector="ReturnLogin:" destination="0oq-ZF-Qvv" eventType="touchUpInside" id="rPI-up-6lb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SparkDev iOS Fall 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-C7-ti9">
-                                <rect key="frame" x="124" y="862" width="180" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AniMedia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttY-8E-8dr">
-                                <rect key="frame" x="90" y="108" width="249" height="74"/>
+                                <rect key="frame" x="90" y="108" width="250" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="62"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -178,29 +166,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screenshot 2022-11-04 at 1.12.41 PM" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-r0-Pi9">
+                                <rect key="frame" x="125" y="855" width="180" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z3j-kM-5lu"/>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.13725490196078433" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="2ym-B6-w08"/>
                     <connections>
-                        <outlet property="App_Name" destination="ttY-8E-8dr" id="dNT-Fo-7US"/>
-                        <outlet property="Register_Button" destination="7rI-7G-Gd2" id="OcY-oo-J2g"/>
-                        <outlet property="Spark_Message" destination="bz5-C7-ti9" id="201-f3-QVm"/>
-                        <outlet property="passwordemail" destination="SOj-YG-yP1" id="C0A-ZZ-MUI"/>
-                        <outlet property="registeremail" destination="Acf-a3-Y86" id="jFc-qN-vd7"/>
-                        <outlet property="username" destination="HCv-bO-xVH" id="P1y-3x-PWi"/>
-                        <segue destination="wbs-kD-yLj" kind="presentation" identifier="RegisterTab" id="tNu-qD-7E2"/>
+                        <outlet property="App_Name" destination="ttY-8E-8dr" id="28a-aU-UgH"/>
+                        <outlet property="Register_Button" destination="7rI-7G-Gd2" id="IHQ-Pa-XOD"/>
+                        <outlet property="passwordemail" destination="SOj-YG-yP1" id="ES5-me-bX8"/>
+                        <outlet property="registeremail" destination="Acf-a3-Y86" id="sOs-51-jgm"/>
+                        <outlet property="username" destination="HCv-bO-xVH" id="FHg-ac-wn1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laI-ww-yfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-998" y="939"/>
+            <point key="canvasLocation" x="-931" y="69"/>
         </scene>
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="KUY-99-b20">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="wbs-kD-yLj" customClass="CustomTabBarViewController" customModule="Sparkdev_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="wbs-kD-yLj" customClass="CustomTabBarViewController" customModule="Sparkdev_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Vwh-Ez-Uwr"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y52-nz-yF5">
@@ -1058,14 +1048,11 @@
             <point key="canvasLocation" x="4706.0747663551401" y="-1781.209503239741"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="tNu-qD-7E2"/>
-        <segue reference="F2P-ic-ZlV"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Chat Room Background" width="375" height="812"/>
         <image name="Main Background" width="375" height="812"/>
+        <image name="Screenshot 2022-11-04 at 1.12.41 PM" width="748" height="148"/>
         <image name="White Chat Room" width="321" height="75"/>
         <image name="comment" width="24" height="24"/>
         <image name="house" catalog="system" width="128" height="104"/>

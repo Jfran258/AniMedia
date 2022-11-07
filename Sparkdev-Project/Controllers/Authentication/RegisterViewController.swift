@@ -10,33 +10,49 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
+
 class RegisterViewController: UIViewController {
+    
+    @IBOutlet weak var App_Name: UILabel!
+    @IBOutlet weak var Register_Button: UIButton!
     @IBOutlet weak var username: UITextField!
     
     @IBOutlet weak var registeremail: UITextField!
     
     @IBOutlet weak var passwordemail: UITextField!
     
-    @IBOutlet weak var App_Name: UILabel!
-    
-    @IBOutlet weak var Register_Button: UIButton!
-    
-    @IBOutlet weak var Spark_Message: UILabel!
+   
     
     override func viewDidLoad() {
+        
+        view.backgroundColor = UIColor(red: 31/255, green: 35/255, blue: 41/255, alpha: 1)
+        
         registeremail.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-        registeremail.layer.cornerRadius = 15
+        registeremail.layer.cornerRadius = 22
         registeremail.borderStyle = .none
         
+        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        registeremail.leftView = paddingView
+        registeremail.leftViewMode = .always
+        
         passwordemail.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-        passwordemail.layer.cornerRadius = 15
+        passwordemail.layer.cornerRadius = 22
         passwordemail.borderStyle = .none
+        passwordemail.textContentType = .oneTimeCode
+        
+        let paddingViews: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        passwordemail.leftView = paddingViews
+        passwordemail.leftViewMode = .always
         
         username.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-        username.layer.cornerRadius = 15
+        username.layer.cornerRadius = 22
         username.borderStyle = .none
         
-        Register_Button.layer.cornerRadius = 15
+        let paddingViewss: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        username.leftView = paddingViewss
+        username.leftViewMode = .always
+        
+        Register_Button.layer.cornerRadius = 17
         
         
         let App_N = "AniMedia"
@@ -45,19 +61,28 @@ class RegisterViewController: UIViewController {
         App_Name.attributedText = attributeText
         
         
-        let Spark_M = "SparkDev iOS Fall 2022"
-        let attribute_M = NSMutableAttributedString(string: Spark_M)
-        attribute_M.addAttribute(.foregroundColor, value: UIColor.systemRed, range: NSRange(location: 0, length: 8))
-        Spark_Message.attributedText = attribute_M
-        
+    }
+
+    @IBAction func ReturnLogin(_ sender: Any) {
+        _ = UIStoryboard(name: "Main", bundle: nil)
+        //let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+        navigationController?.popViewController(animated: true)
+        /*
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+         */
     }
     
-    @IBAction func Register(_ sender: UIButton) {
-        
+    @IBAction func Register(_ sender: Any) {
         if let email = registeremail.text, let password =  passwordemail.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    print(e.localizedDescription)
+                    if (self.username.text == "" || email == "" || password == "") {
+                        self.showAlert(title: "ERROR!", messege: "Please fill out the empty fields")
+                    } else {
+                        self.showAlert(title: "ERROR!", messege: e.localizedDescription)
+                    }
+                    //self.showError()
                 } else {
                     guard let userId = authResult?.user.uid, let userName = self.username.text else {
                         return
@@ -71,9 +96,30 @@ class RegisterViewController: UIViewController {
                     
                     user.setValue(dataArray)
                     //Navigate to View Controller
-                    self.performSegue(withIdentifier: "RegisterTab", sender: self)
+                    //self.performSegue(withIdentifier: "RegisterTab", sender: self)
+                    self.checkUserInfo()
+                       // let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                       // let vc = storyboard.instantiateViewController(withIdentifier: "Home")
+                       // vc.modalPresentationStyle = .overFullScreen
+                       // self.present(vc, animated: true)
+                    
                 }
             }
         }
+    }
+   
+    
+    func showAlert(title: String, messege: String) {
+        let alert = UIAlertController(title: title, message: messege, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        self.present(alert, animated: true, completion: nil)
+    }
+ 
+    func checkUserInfo() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Home")
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        
     }
 }
