@@ -20,7 +20,14 @@ class AnimeDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Set title
-        titleLabel.text = anime["title"] as! String
+        if let title = anime["title_english"] as? String {
+            titleLabel.text = title
+        } else {
+            if let title = anime["title"] as? String {
+                titleLabel.text = title
+            }
+        }
+        //titleLabel.text = anime["title"] as! String
         
         // Set synopsis
         if let synopsis = anime["synopsis"] as? String {
@@ -29,7 +36,15 @@ class AnimeDetailsViewController: UIViewController {
             synopsisLabel.text = "N/A"
         }
         
-        
+        // Trailer URL
+        if let trailer = anime["trailer"] as? [String: AnyObject] {
+            if let url = trailer["url"] as? String {
+                print(url)
+                if let videoId = url.components(separatedBy: "=").last {
+                    print(videoId)
+                }
+            }
+        }
     }
     
     // Hides tab bar
