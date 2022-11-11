@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "GTMSessionFetcher 2.h"
 #import "GTMSessionFetcher.h"
 #import "GTMSessionFetcherLogging.h"
 #import "GTMSessionFetcherService.h"
