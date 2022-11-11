@@ -13,6 +13,6 @@ target 'Sparkdev-Project' do
   pod 'Firebase/Storage'
   pod 'AlamofireImage'
   pod 'youtube-ios-player-helper'
-
+  pod 'SwiftSoup'
 
 end
