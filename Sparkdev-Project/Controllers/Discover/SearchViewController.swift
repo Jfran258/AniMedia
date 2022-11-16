@@ -89,8 +89,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         let show = shows[indexPath.item]
         
         // Set title
-        let title = show["title"] as! String
-        cell.titleLabel.text = title
+        if let title = show["title_english"] as? String {
+            cell.titleLabel.text = title
+        } else {
+            if let title = show["title"] as? String {
+                cell.titleLabel.text = title
+            }
+        }
         
         // Set the poster
         if let images = show["images"] as? [String: AnyObject] {

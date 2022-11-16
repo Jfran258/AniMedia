@@ -35,7 +35,6 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
         navigationItem.backButtonTitle = ""
         
         //https://api.jikan.moe/v4/seasons/2022/summer
-        //https://api.jikan.moe/v4/anime?q=kimetsu%20no%20yaiba&sfw
         //https://api.jikan.moe/v4/top/manga
         getShowsData(urlString: "https://api.jikan.moe/v4/seasons/now", showData: "currentlyAiringShows")
         getShowsData(urlString: "https://api.jikan.moe/v4/seasons/upcoming", showData: "upcomingShows")
@@ -162,8 +161,13 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
             let show = currentlyAiringShows[indexPath.item]
 
             // Set the title
-            let title = show["title"] as! String
-            cell.titleLabel.text = title
+            if let title = show["title_english"] as? String {
+                cell.titleLabel.text = title
+            } else {
+                if let title = show["title"] as? String {
+                    cell.titleLabel.text = title
+                }
+            }
 
             // Set the poster
             if let images = show["images"] as? [String: AnyObject] {
@@ -188,8 +192,13 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
             let show = upcomingShows[indexPath.item]
 
             // Set the title
-            let title = show["title"] as! String
-            cell.titleLabel.text = title
+            if let title = show["title_english"] as? String {
+                cell.titleLabel.text = title
+            } else {
+                if let title = show["title"] as? String {
+                    cell.titleLabel.text = title
+                }
+            }
             
             // Set the poster
             if let images = show["images"] as? [String: AnyObject] {
@@ -214,8 +223,13 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
             let show = topShows[indexPath.item]
 
             // Set the title
-            let title = show["title"] as! String
-            cell.titleLabel.text = title
+            if let title = show["title_english"] as? String {
+                cell.titleLabel.text = title
+            } else {
+                if let title = show["title"] as? String {
+                    cell.titleLabel.text = title
+                }
+            }
             
             // Set the poster
             if let images = show["images"] as? [String: AnyObject] {

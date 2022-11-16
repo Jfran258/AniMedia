@@ -15,12 +15,15 @@
 		492DDFB028F3CC5E009FECDD /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DDFAF28F3CC5E009FECDD /* ChatRoomViewController.swift */; };
 		4945C8992908555200FB674C /* TopShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945C8982908555200FB674C /* TopShowCell.swift */; };
 		497074F828F4744B0098ED47 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497074F728F4744A0098ED47 /* RoomCell.swift */; };
+		49807973291ED9A300818858 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49807972291ED9A300818858 /* CustomTableViewCell.swift */; };
+		49807975291ED9B800818858 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49807974291ED9B800818858 /* NewsViewController.swift */; };
 		499BCE4A29072AB40035BA71 /* AnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BCE4929072AB40035BA71 /* AnimeViewController.swift */; };
 		499BCE4D29072D010035BA71 /* CurrentlyAiringShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BCE4C29072D010035BA71 /* CurrentlyAiringShowCell.swift */; };
 		499BCE4F29072D3D0035BA71 /* AnimeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BCE4E29072D3D0035BA71 /* AnimeDetailsViewController.swift */; };
 		499BCE5129077B650035BA71 /* UpcomingShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BCE5029077B650035BA71 /* UpcomingShowCell.swift */; };
 		49A1B31828F79C75000E1DDF /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1B31728F79C74000E1DDF /* ChatCell.swift */; };
 		49A1B31A28F7A11E000E1DDF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1B31928F7A11E000E1DDF /* Message.swift */; };
+		49B8018E291F1D5600514B5C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B8018D291F1D5600514B5C /* News.swift */; };
 		52B07654BF4FAACF6B9D3FA1 /* Pods_Sparkdev_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57CF43A70995262F1224578 /* Pods_Sparkdev_Project.framework */; };
 		71491FEA291DDF1400269EE9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71491FE9291DDF1400269EE9 /* ProfileViewController.swift */; };
 		71491FEC291EC29B00269EE9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71491FEB291EC29B00269EE9 /* SettingsViewController.swift */; };
@@ -45,14 +48,20 @@
 		492DDFAF28F3CC5E009FECDD /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		4945C8982908555200FB674C /* TopShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopShowCell.swift; sourceTree = "<group>"; };
 		497074F728F4744A0098ED47 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
+		49807972291ED9A300818858 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		49807974291ED9B800818858 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		499BCE4929072AB40035BA71 /* AnimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeViewController.swift; sourceTree = "<group>"; };
 		499BCE4C29072D010035BA71 /* CurrentlyAiringShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyAiringShowCell.swift; sourceTree = "<group>"; };
 		499BCE4E29072D3D0035BA71 /* AnimeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsViewController.swift; sourceTree = "<group>"; };
 		499BCE5029077B650035BA71 /* UpcomingShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingShowCell.swift; sourceTree = "<group>"; };
 		49A1B31728F79C74000E1DDF /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		49A1B31928F7A11E000E1DDF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+
 		71491FE9291DDF1400269EE9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Sparkdev-Project/Controllers/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
 		71491FEB291EC29B00269EE9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+
+		49B8018D291F1D5600514B5C /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+
 		714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginsViewController.swift; sourceTree = "<group>"; };
 		714FF7E328FF347000401EF0 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		94EB3D5CBF19B77CB25C345A /* Pods-Sparkdev-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparkdev-Project.release.xcconfig"; path = "Target Support Files/Pods-Sparkdev-Project/Pods-Sparkdev-Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +96,7 @@
 			children = (
 				714FF7E328FF347000401EF0 /* LaunchViewController.swift */,
 				BCC7B77D28DFF181009439E2 /* CustomTabBarViewController.swift */,
+				49807974291ED9B800818858 /* NewsViewController.swift */,
 				499BCE5229078F910035BA71 /* Authentication */,
 				499BCE5429078FF50035BA71 /* Discover */,
 				499BCE5329078FC30035BA71 /* ChatRooms */,
@@ -108,6 +118,7 @@
 			children = (
 				492DDFAD28F3AC70009FECDD /* Room.swift */,
 				49A1B31928F7A11E000E1DDF /* Message.swift */,
+				49B8018D291F1D5600514B5C /* News.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +166,7 @@
 		499BCE552907903F0035BA71 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				49807972291ED9A300818858 /* CustomTableViewCell.swift */,
 				499BCE5029077B650035BA71 /* UpcomingShowCell.swift */,
 				499BCE4C29072D010035BA71 /* CurrentlyAiringShowCell.swift */,
 				4945C8982908555200FB674C /* TopShowCell.swift */,
@@ -226,7 +238,7 @@
 				BC7CF9BD28DF7D740023768A /* Sources */,
 				BC7CF9BE28DF7D740023768A /* Frameworks */,
 				BC7CF9BF28DF7D740023768A /* Resources */,
-				36B7EE09251134508BB51CE4 /* [CP] Embed Pods Frameworks */,
+				50AB96B15813FBBEDAEE2E0C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,7 +297,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		36B7EE09251134508BB51CE4 /* [CP] Embed Pods Frameworks */ = {
+		50AB96B15813FBBEDAEE2E0C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,7 +345,9 @@
 			files = (
 				499BCE4A29072AB40035BA71 /* AnimeViewController.swift in Sources */,
 				BC5F6E8728E7341700A53C99 /* RegisterViewController.swift in Sources */,
+				49B8018E291F1D5600514B5C /* News.swift in Sources */,
 				BC7CF9C528DF7D740023768A /* AppDelegate.swift in Sources */,
+				49807973291ED9A300818858 /* CustomTableViewCell.swift in Sources */,
 				492DDFAC28F3A9EF009FECDD /* CreateChatViewController.swift in Sources */,
 				492AFD292912A5B4003120FC /* SearchViewController.swift in Sources */,
 				49A1B31828F79C75000E1DDF /* ChatCell.swift in Sources */,
@@ -346,6 +360,7 @@
 				492DDFB028F3CC5E009FECDD /* ChatRoomViewController.swift in Sources */,
 				71491FEC291EC29B00269EE9 /* SettingsViewController.swift in Sources */,
 				499BCE4F29072D3D0035BA71 /* AnimeDetailsViewController.swift in Sources */,
+				49807975291ED9B800818858 /* NewsViewController.swift in Sources */,
 				492DDFAA28F3A633009FECDD /* ChatRoomsViewController.swift in Sources */,
 				BC7CF9C728DF7D740023768A /* SceneDelegate.swift in Sources */,
 				4945C8992908555200FB674C /* TopShowCell.swift in Sources */,
