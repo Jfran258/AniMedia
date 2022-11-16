@@ -92,23 +92,16 @@ class RegisterViewController: UIViewController {
                     let reference = Database.database().reference()
                     let user = reference.child("users").child(userId)
                     
-                    let dataArray:[String: Any] = ["username": userName]
+                    let dataArray:[String: Any] = ["username": userName, "profileImageUrl":"", "Bio": ""]
                     
                     user.setValue(dataArray)
-                    //Navigate to View Controller
-                    //self.performSegue(withIdentifier: "RegisterTab", sender: self)
+                    
                     self.checkUserInfo()
-                       // let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                       // let vc = storyboard.instantiateViewController(withIdentifier: "Home")
-                       // vc.modalPresentationStyle = .overFullScreen
-                       // self.present(vc, animated: true)
                     
                 }
             }
         }
     }
-   
-    
     func showAlert(title: String, messege: String) {
         let alert = UIAlertController(title: title, message: messege, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
@@ -123,3 +116,7 @@ class RegisterViewController: UIViewController {
         
     }
 }
+
+   
+    
+
