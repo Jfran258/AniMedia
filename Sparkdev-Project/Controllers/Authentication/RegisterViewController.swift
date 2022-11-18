@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import Firebase
-
+import FirebaseStorage
 
 class RegisterViewController: UIViewController {
     
@@ -90,19 +90,53 @@ class RegisterViewController: UIViewController {
                     print("User: \(userId)")
                     
                     let reference = Database.database().reference()
+                    
                     let user = reference.child("users").child(userId)
                     
-                    let dataArray:[String: Any] = ["username": userName]
+                    // Create the user dictionary info
+                    var dataArray: [String: Any] = [
+                        "username": userName,
+                        "profileImageUrl": "",
+                        "uid": userId,
+                        "bio": "I am new here."
+                    ]
                     
-                    user.setValue(dataArray)
-                    //Navigate to View Controller
-                    //self.performSegue(withIdentifier: "RegisterTab", sender: self)
-                    self.checkUserInfo()
-                       // let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                       // let vc = storyboard.instantiateViewController(withIdentifier: "Home")
-                       // vc.modalPresentationStyle = .overFullScreen
-                       // self.present(vc, animated: true)
+                    // Reference to Storage
+                    let storageRef = Storage.storage().reference(forURL: "gs://animedia-7ff8a.appspot.com")
+
+                    // Reference to Profile child
+                    let storageProfileRef = storageRef.child("profile").child(userId)
                     
+                    let metaData = StorageMetadata()
+                    metaData.contentType = "image/jpg"
+                    
+                    let image = UIImage(named: "defaultprofile")
+                    
+                    guard let imageData = image?.jpegData(compressionQuality: 0.4) else {
+                        return
+                    }
+                    
+                    // Saving image data to Storage
+                    storageProfileRef.putData(imageData, metadata: metaData) { (StorageMetadata, error) in
+                        if error != nil {
+                            print(error?.localizedDescription)
+                            return
+                        }
+                        
+                        // Getting image url from Storage
+                        storageProfileRef.downloadURL { (url, error) in
+                            if let metaImageUrl = url?.absoluteString {
+                                // Updating dict with retrieved image url
+                                dataArray["profileImageUrl"] = metaImageUrl
+                                
+                                // Save user info to database
+                                user.setValue(dataArray)
+                                
+                                //Navigate to View Controller
+                                self.checkUserInfo()
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -25,7 +25,7 @@ class NewsViewController: UIViewController, UITableViewDataSource {
     
     func getNews( ){
         do {
-            let content = try String(contentsOf: URL(string: "https://www.animenewsnetwork.com/news/")!)
+            let content = try String(contentsOf: URL(string: "https://www.animenewsnetwork.com/news/anime")!)
             let doc: Document = try SwiftSoup.parse(content)
             
             let mainFeed = try doc.select ("div.mainfeed-section")
