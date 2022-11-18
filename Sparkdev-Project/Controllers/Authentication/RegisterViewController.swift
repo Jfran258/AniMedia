@@ -141,8 +141,6 @@ class RegisterViewController: UIViewController {
             }
         }
     }
-   
-    
     func showAlert(title: String, messege: String) {
         let alert = UIAlertController(title: title, message: messege, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
@@ -157,3 +155,7 @@ class RegisterViewController: UIViewController {
         
     }
 }
+
+   
+    
+

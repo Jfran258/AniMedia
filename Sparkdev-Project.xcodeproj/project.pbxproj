@@ -26,6 +26,8 @@
 		49A1B31A28F7A11E000E1DDF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1B31928F7A11E000E1DDF /* Message.swift */; };
 		49B8018E291F1D5600514B5C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B8018D291F1D5600514B5C /* News.swift */; };
 		52B07654BF4FAACF6B9D3FA1 /* Pods_Sparkdev_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57CF43A70995262F1224578 /* Pods_Sparkdev_Project.framework */; };
+		71491FEA291DDF1400269EE9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71491FE9291DDF1400269EE9 /* ProfileViewController.swift */; };
+		71491FEC291EC29B00269EE9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71491FEB291EC29B00269EE9 /* SettingsViewController.swift */; };
 		714FF7E228FD9BE700401EF0 /* LoginsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */; };
 		714FF7E428FF347000401EF0 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714FF7E328FF347000401EF0 /* LaunchViewController.swift */; };
 		BC5F6E8728E7341700A53C99 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */; };
@@ -56,7 +58,12 @@
 		499BCE5029077B650035BA71 /* UpcomingShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingShowCell.swift; sourceTree = "<group>"; };
 		49A1B31728F79C74000E1DDF /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		49A1B31928F7A11E000E1DDF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+
+		71491FE9291DDF1400269EE9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Sparkdev-Project/Controllers/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
+		71491FEB291EC29B00269EE9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+
 		49B8018D291F1D5600514B5C /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+
 		714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginsViewController.swift; sourceTree = "<group>"; };
 		714FF7E328FF347000401EF0 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		94EB3D5CBF19B77CB25C345A /* Pods-Sparkdev-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparkdev-Project.release.xcconfig"; path = "Target Support Files/Pods-Sparkdev-Project/Pods-Sparkdev-Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */,
+				71491FE9291DDF1400269EE9 /* ProfileViewController.swift */,
+				71491FEB291EC29B00269EE9 /* SettingsViewController.swift */,
 				BC5F6E8628E7341700A53C99 /* RegisterViewController.swift */,
 			);
 			path = Authentication;
@@ -353,12 +362,14 @@
 				714FF7E228FD9BE700401EF0 /* LoginsViewController.swift in Sources */,
 				49A1B31A28F7A11E000E1DDF /* Message.swift in Sources */,
 				492DDFB028F3CC5E009FECDD /* ChatRoomViewController.swift in Sources */,
+				71491FEC291EC29B00269EE9 /* SettingsViewController.swift in Sources */,
 				499BCE4F29072D3D0035BA71 /* AnimeDetailsViewController.swift in Sources */,
 				49807975291ED9B800818858 /* NewsViewController.swift in Sources */,
 				492DDFAA28F3A633009FECDD /* ChatRoomsViewController.swift in Sources */,
 				BC7CF9C728DF7D740023768A /* SceneDelegate.swift in Sources */,
 				4945C8992908555200FB674C /* TopShowCell.swift in Sources */,
 				499BCE4D29072D010035BA71 /* CurrentlyAiringShowCell.swift in Sources */,
+				71491FEA291DDF1400269EE9 /* ProfileViewController.swift in Sources */,
 				714FF7E428FF347000401EF0 /* LaunchViewController.swift in Sources */,
 				499BCE5129077B650035BA71 /* UpcomingShowCell.swift in Sources */,
 			);
