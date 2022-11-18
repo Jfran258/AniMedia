@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491DB14A29241534009FAE22 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DB14929241534009FAE22 /* ProfileViewController.swift */; };
 		492AFD292912A5B4003120FC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AFD282912A5B4003120FC /* SearchViewController.swift */; };
 		492AFD2B2912B73C003120FC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AFD2A2912B73C003120FC /* SearchTableViewCell.swift */; };
 		492DDFAA28F3A633009FECDD /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DDFA928F3A633009FECDD /* ChatRoomsViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		491DB14929241534009FAE22 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		492AFD282912A5B4003120FC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		492AFD2A2912B73C003120FC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		492DDFA928F3A633009FECDD /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				499BCE5229078F910035BA71 /* Authentication */,
 				499BCE5429078FF50035BA71 /* Discover */,
 				499BCE5329078FC30035BA71 /* ChatRooms */,
+				491DB14929241534009FAE22 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				BC7CF9C528DF7D740023768A /* AppDelegate.swift in Sources */,
 				49807973291ED9A300818858 /* CustomTableViewCell.swift in Sources */,
 				492DDFAC28F3A9EF009FECDD /* CreateChatViewController.swift in Sources */,
+				491DB14A29241534009FAE22 /* ProfileViewController.swift in Sources */,
 				492AFD292912A5B4003120FC /* SearchViewController.swift in Sources */,
 				49A1B31828F79C75000E1DDF /* ChatCell.swift in Sources */,
 				492DDFAE28F3AC70009FECDD /* Room.swift in Sources */,
@@ -521,7 +525,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.francis.Sparkdev-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.miguel.Sparkdev-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

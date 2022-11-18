@@ -23,6 +23,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         searchField.delegate = self
         
         navigationItem.backButtonTitle = ""
+
+        searchField.becomeFirstResponder()
     }
     
     // When the user is typing in the textfield
@@ -100,7 +102,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         // Set the poster
         if let images = show["images"] as? [String: AnyObject] {
             if let jpg = images["jpg"] {
-                if let imageUrl = jpg["image_url"] as? String {
+                if let imageUrl = jpg["large_image_url"] as? String {
                     let newUrl = URL(string: imageUrl)
                     cell.posterView.af.setImage(withURL: newUrl!)
                 }
@@ -120,32 +122,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         } else {
             cell.typeLabel.text = "N/A"
         }
-        /*
-        var airing: String?
-        if let season = show["season"] as? String {
-            //print(season)
-            if let year = show["year"] as? Int {
-                //print(year)
-                //print("\(season.capitalized) \(year)")
-                airing = "\(season.capitalized) \(year)"
-            }
-        }
-        print(airing)
-        */
-
-        if let season = show["season"] as? String, let year = show["year"] as? Int {
-            print(season)
-            print(year)
-            //print("\(season.capitalized) \(year)")
-        } else {
-            print("N/A")
-        }
-
-        /*
-        if let year = show["year"] as? Int {
-            //print(year)
-        }
-        */
         
         // Get rid of tapped item highlight effect
         cell.selectionStyle = .none

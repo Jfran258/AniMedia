@@ -172,7 +172,7 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
             // Set the poster
             if let images = show["images"] as? [String: AnyObject] {
                 if let jpg = images["jpg"] {
-                    if let imageUrl = jpg["image_url"] as? String {
+                    if let imageUrl = jpg["large_image_url"] as? String {
                         let newUrl = URL(string: imageUrl)
                         cell.posterView.af.setImage(withURL: newUrl!)
                     }
@@ -203,7 +203,7 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
             // Set the poster
             if let images = show["images"] as? [String: AnyObject] {
                 if let jpg = images["jpg"] {
-                    if let imageUrl = jpg["image_url"] as? String {
+                    if let imageUrl = jpg["large_image_url"] as? String {
                         let newUrl = URL(string: imageUrl)
                         cell.posterView.af.setImage(withURL: newUrl!)
                     }
@@ -234,7 +234,7 @@ class AnimeViewController: UIViewController, UICollectionViewDelegate, UICollect
             // Set the poster
             if let images = show["images"] as? [String: AnyObject] {
                 if let jpg = images["jpg"] {
-                    if let imageUrl = jpg["image_url"] as? String {
+                    if let imageUrl = jpg["large_image_url"] as? String {
                         let newUrl = URL(string: imageUrl)
                         cell.posterView.af.setImage(withURL: newUrl!)
                     }
