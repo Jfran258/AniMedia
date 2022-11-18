@@ -24,34 +24,24 @@ class AnimeDetailsViewController: UIViewController {
     
     @IBOutlet weak var synopsisLabel: UILabel!
     
-    //@IBOutlet weak var playerView: YTPlayerView!
+    @IBOutlet weak var playerView: YTPlayerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        //navBarAppearance.backgroundColor = .tintColor
-        //navigationController?.navigationBar.standardAppearance = navBarAppearance
-        //navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        
         //UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         //self.navigationController?.navigationBar.isTranslucent = true
-
+        
+        //let appearance = UINavigationBarAppearance()
+        //appearance.backgroundColor = UIColor.red
+        //navigationController?.navigationBar.scrollEdgeAppearance = appearance
         backgroundView.layer.borderWidth = 0
-        //navigationController?.navigationBar.backgroundColor = UIColor(red: 31.0, green: 35.0, blue: 41.0, alpha: 1.0)
-        //navigationController?.navigationBar.backgroundColor = UIColor.black
-        //navigationController?.navigationBar.tintColor = UIColor.black
-        //navigationController?.navigationBar.tintColor = UIColor.white
-        //navigationController?.hidesBarsOnSwipe = true
-        //navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.black
-        
-        
-        
-        
+
         
         // Set the poster
         if let images = anime["images"] as? [String: AnyObject] {
             if let jpg = images["jpg"] {
-                if let imageUrl = jpg["image_url"] as? String {
+                if let imageUrl = jpg["large_image_url"] as? String {
                     let newUrl = URL(string: imageUrl)
                     posterView.af.setImage(withURL: newUrl!)
                     
@@ -71,24 +61,23 @@ class AnimeDetailsViewController: UIViewController {
         if let title = anime["title_english"] as? String {
             titleLabel.text = title
             self.title = title
-            //titleLabel.sizeToFit()
         } else {
             if let title = anime["title"] as? String {
                 titleLabel.text = title
+                self.title = title
             }
         }
          
         // Score
         if let score = anime["score"] as? Double {
-            //titleLabel.text = title
             print(score)
         } else {
             print("NA")
         }
         
         // Set type
-        if let episodes = anime["type"] as? String {
-            typeLabel.text = "\(episodes)"
+        if let type = anime["type"] as? String {
+            typeLabel.text = "\(type)"
         } else {
             typeLabel.text = "?"
         }
@@ -99,7 +88,7 @@ class AnimeDetailsViewController: UIViewController {
         } else {
             episodesLabel.text = "?"
         }
-        
+
         // Set air date
         if let season = anime["season"] as? String, let year = anime["year"] as? Int {
             //print("\(season.capitalized) \(year)")
@@ -114,6 +103,7 @@ class AnimeDetailsViewController: UIViewController {
             for studio in studios {
                 print(studio["name"] as! String, terminator: " ")
             }
+            print()
             /*
             // Check if studios exist
             if studios.count != 0 {
@@ -130,7 +120,6 @@ class AnimeDetailsViewController: UIViewController {
         // Set synopsis
         if let synopsis = anime["synopsis"] as? String {
             synopsisLabel.text = synopsis
-            //synopsisLabel.sizeToFit()
         } else {
             synopsisLabel.text = "To be added."
         }
@@ -138,12 +127,8 @@ class AnimeDetailsViewController: UIViewController {
         // Set the trailer
         if let trailer = anime["trailer"] as? [String: AnyObject] {
             // Get trailer URL
-            if let url = trailer["url"] as? String {
-                // Get the video ID
-                if let videoId = url.components(separatedBy: "=").last {
-                    // Loading player with videoId
-                    //playerView.load(withVideoId: videoId)
-                }
+            if let videoId = trailer["youtube_id"] as? String {
+                playerView.load(withVideoId: videoId)
             }
         }
     }
@@ -151,8 +136,5 @@ class AnimeDetailsViewController: UIViewController {
     // Hides tab bar
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
     }
 }
