@@ -46,7 +46,7 @@ class LoginsViewController: UIViewController {
         
         let App_N = "AniMedia"
         let attributeText = NSMutableAttributedString(string: App_N)
-        attributeText.addAttribute(.foregroundColor, value: UIColor.systemCyan, range: NSRange(location: 3, length: 5))
+        attributeText.addAttribute(.foregroundColor, value: UIColor(red: 28.0/255, green: 181.0/255, blue: 224.0/255, alpha: 1), range: NSRange(location: 3, length: 5))
         App_Name.attributedText = attributeText
         
         
