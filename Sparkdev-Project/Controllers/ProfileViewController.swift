@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     
+    @IBOutlet weak var usernameView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +23,9 @@ class ProfileViewController: UIViewController {
         profileImage.layer.masksToBounds = false
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.clipsToBounds = true
+        
+        
+        usernameView.layer.cornerRadius = 20
 
         getUserData()
     }
@@ -55,6 +59,8 @@ class ProfileViewController: UIViewController {
             self.profileImage.af.setImage(withURL: newUrl!)
             self.bioLabel.text = aUser.bio
         }
+        
+        
     }
     
     struct User {
@@ -72,4 +78,34 @@ class ProfileViewController: UIViewController {
             profileUrl = dict["profileImageUrl"] as! String
         }
     }
+    
+    @IBAction func didTapGear(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
+        navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        
+        vc.completionHandlerProfile = { text in
+            if (text != "") {
+                self.usernameLabel.text = text
+            } else {
+                self.getUserData()
+            }
+        }
+        vc.completionHandlerBio = { text in
+            if (text != "") {
+                self.bioLabel.text = text
+            } else {
+                self.getUserData()
+            }
+        }
+        vc.completionHandlerPicture = { text in
+            let text2 = URL(string: text!)
+            self.profileImage.af.setImage(withURL: text2!)
+        }
+         
+        //present(vc, animated: true)
+    }
+    
+
 }
