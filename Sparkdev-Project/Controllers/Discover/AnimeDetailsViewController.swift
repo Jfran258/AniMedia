@@ -24,6 +24,9 @@ class AnimeDetailsViewController: UIViewController {
     
     @IBOutlet weak var synopsisLabel: UILabel!
     
+    @IBOutlet weak var genresLabel: UILabel!
+    @IBOutlet weak var studiosLabel: UILabel!
+    
     @IBOutlet weak var playerView: YTPlayerView!
     
     override func viewDidLoad() {
@@ -91,30 +94,55 @@ class AnimeDetailsViewController: UIViewController {
 
         // Set air date
         if let season = anime["season"] as? String, let year = anime["year"] as? Int {
-            //print("\(season.capitalized) \(year)")
             seasonLabel.text = "\(season.capitalized) \(year)"
         } else {
-            seasonLabel.text = "?"
+            if let aired = anime["aired"] as? [String: AnyObject] {
+                if let string = aired["string"] as? String {
+                    print(string)
+                    seasonLabel.text = string
+                }
+            } else {
+                seasonLabel.text = "?"
+            }
         }
         
         // Set studio
         if let studios = anime["studios"] as? [[String: Any]] {
             
+            var theStudios = [String]()
             for studio in studios {
-                print(studio["name"] as! String, terminator: " ")
+                theStudios.append(studio["name"] as! String)
+                //print(studio["name"] as! String, terminator: " ")
             }
             print()
+            
+            
+            studiosLabel.text = theStudios.joined(separator: ", ")
+            studiosLabel.sizeToFit()
             /*
             // Check if studios exist
             if studios.count != 0 {
                 let studio = studios[0]["name"] as? String
-                seasonLabel.text = studio
+                studiosLabel.text = studio
             } else {
-                seasonLabel.text = "?"
+                studiosLabel.text = "??"
             }
             */
         } else {
-            //seasonLabel.text = "?"
+            studiosLabel.text = "?"
+        }
+        
+        // Set genres
+        if let genres = anime["genres"] as? [[String: Any]] {
+            var theGenres = [String]()
+            for genre in genres {
+                theGenres.append(genre["name"] as! String)
+                //print(genre["name"] as! String, terminator: " ")
+            }
+            print()
+            
+            genresLabel.text = theGenres.joined(separator: ", ")
+            genresLabel.sizeToFit()
         }
         
         // Set synopsis
