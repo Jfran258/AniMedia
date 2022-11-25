@@ -156,7 +156,7 @@ class AnimeDetailsViewController: UIViewController {
         if let trailer = anime["trailer"] as? [String: AnyObject] {
             // Get trailer URL
             if let videoId = trailer["youtube_id"] as? String {
-                playerView.load(withVideoId: videoId)
+                playerView.load(withVideoId: videoId, playerVars: ["playsinline" : 0])
             }
         }
     }
