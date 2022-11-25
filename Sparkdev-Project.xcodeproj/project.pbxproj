@@ -14,7 +14,11 @@
 		492DDFAC28F3A9EF009FECDD /* CreateChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DDFAB28F3A9EF009FECDD /* CreateChatViewController.swift */; };
 		492DDFAE28F3AC70009FECDD /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DDFAD28F3AC70009FECDD /* Room.swift */; };
 		492DDFB028F3CC5E009FECDD /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DDFAF28F3CC5E009FECDD /* ChatRoomViewController.swift */; };
+		4934B7FA293005EA00BC38CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934B7F9293005EA00BC38CD /* HomeViewController.swift */; };
+		4934B7FC2930063200BC38CD /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934B7FB2930063200BC38CD /* PostCell.swift */; };
+		4934B7FE293006EE00BC38CD /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934B7FD293006EE00BC38CD /* CreatePostViewController.swift */; };
 		4945C8992908555200FB674C /* TopShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945C8982908555200FB674C /* TopShowCell.swift */; };
+		494EDFA629316EC80070101E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EDFA529316EC80070101E /* Post.swift */; };
 		497074F828F4744B0098ED47 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497074F728F4744A0098ED47 /* RoomCell.swift */; };
 		49807973291ED9A300818858 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49807972291ED9A300818858 /* CustomTableViewCell.swift */; };
 		49807975291ED9B800818858 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49807974291ED9B800818858 /* NewsViewController.swift */; };
@@ -47,7 +51,11 @@
 		492DDFAB28F3A9EF009FECDD /* CreateChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatViewController.swift; sourceTree = "<group>"; };
 		492DDFAD28F3AC70009FECDD /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		492DDFAF28F3CC5E009FECDD /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		4934B7F9293005EA00BC38CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4934B7FB2930063200BC38CD /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		4934B7FD293006EE00BC38CD /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		4945C8982908555200FB674C /* TopShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopShowCell.swift; sourceTree = "<group>"; };
+		494EDFA529316EC80070101E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		497074F728F4744A0098ED47 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		49807972291ED9A300818858 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		49807974291ED9B800818858 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +106,8 @@
 				499BCE5429078FF50035BA71 /* Discover */,
 				499BCE5329078FC30035BA71 /* ChatRooms */,
 				491DB14929241534009FAE22 /* ProfileViewController.swift */,
+				4934B7F9293005EA00BC38CD /* HomeViewController.swift */,
+				4934B7FD293006EE00BC38CD /* CreatePostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -117,6 +127,7 @@
 				492DDFAD28F3AC70009FECDD /* Room.swift */,
 				49A1B31928F7A11E000E1DDF /* Message.swift */,
 				49B8018D291F1D5600514B5C /* News.swift */,
+				494EDFA529316EC80070101E /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +181,7 @@
 				497074F728F4744A0098ED47 /* RoomCell.swift */,
 				49A1B31728F79C74000E1DDF /* ChatCell.swift */,
 				492AFD2A2912B73C003120FC /* SearchTableViewCell.swift */,
+				4934B7FB2930063200BC38CD /* PostCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -345,12 +357,14 @@
 				49B8018E291F1D5600514B5C /* News.swift in Sources */,
 				BC7CF9C528DF7D740023768A /* AppDelegate.swift in Sources */,
 				49807973291ED9A300818858 /* CustomTableViewCell.swift in Sources */,
+				4934B7FC2930063200BC38CD /* PostCell.swift in Sources */,
 				492DDFAC28F3A9EF009FECDD /* CreateChatViewController.swift in Sources */,
 				491DB14A29241534009FAE22 /* ProfileViewController.swift in Sources */,
 				492AFD292912A5B4003120FC /* SearchViewController.swift in Sources */,
 				49A1B31828F79C75000E1DDF /* ChatCell.swift in Sources */,
 				492DDFAE28F3AC70009FECDD /* Room.swift in Sources */,
 				497074F828F4744B0098ED47 /* RoomCell.swift in Sources */,
+				4934B7FA293005EA00BC38CD /* HomeViewController.swift in Sources */,
 				BCC7B77E28DFF182009439E2 /* CustomTabBarViewController.swift in Sources */,
 				492AFD2B2912B73C003120FC /* SearchTableViewCell.swift in Sources */,
 				714FF7E228FD9BE700401EF0 /* LoginsViewController.swift in Sources */,
@@ -360,6 +374,8 @@
 				49807975291ED9B800818858 /* NewsViewController.swift in Sources */,
 				492DDFAA28F3A633009FECDD /* ChatRoomsViewController.swift in Sources */,
 				BC7CF9C728DF7D740023768A /* SceneDelegate.swift in Sources */,
+				494EDFA629316EC80070101E /* Post.swift in Sources */,
+				4934B7FE293006EE00BC38CD /* CreatePostViewController.swift in Sources */,
 				4945C8992908555200FB674C /* TopShowCell.swift in Sources */,
 				499BCE4D29072D010035BA71 /* CurrentlyAiringShowCell.swift in Sources */,
 				71491FF42928153400269EE9 /* SettingsViewController.swift in Sources */,
@@ -529,7 +545,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.miguel.Sparkdev-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.francis.Sparkdev-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
