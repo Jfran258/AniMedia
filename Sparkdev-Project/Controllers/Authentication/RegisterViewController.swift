@@ -96,9 +96,10 @@ class RegisterViewController: UIViewController {
                     // Create the user dictionary info
                     var dataArray: [String: Any] = [
                         "username": userName,
-                        "profileImageUrl": "",
+                        "profileImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAAB6CAMAAABHh7fWAAAAKlBMVEXY4uP////5+vvo7u7e5ufb5eXw9PTs8fHk6+z1+Pjh6en7/f3V4eHn7O4uLtgkAAACOElEQVRoge2ay5qDIAxGRVAuOu//uiO2Tq03Ev2ji8lZdnO+SBIgtKoURVEURRGldylY+xNSavo7vU1qazNR1226Tdx2ZkHnmzvM7dL7opX29nZbnAmii97EfbMxUdK8WuTFkoutuDsWZ5yQuRDzGLeMuy6bhyqXMB9m2IeIz/ODqvrGos0N1WwMWr3Tw7YA9zVG0OiwPUftoWpCSX/okObEMWN7Gut7YxON2E4mgFsYK78zuB2MsGVJqZlZZgzunEju3xO4Pq5qEgGmfjDNHqzrB9UPNlLOGSWD3LAf3DQfPCo8eUCqOGqsmRM2OGhG2NiVzpD7OK5//0GsbZGZCumSKzPUKI0zMlIjjfJYQW6YUmpqIiOFicNcE57ahd3AO4Gq+qbZCRzewzboG78ez9pbxrOZ5GdFHn26dSTeVy7YgXBbuIpyF0MpuRCsH7EhuPEncVzw6wefoae0Pkg+eDUhHm5dnZepcmePvW97tA789RP9wte1yHuPJR3LPkTUQMOyLlzv0AHyo+e8Y/nVxz7HvNTPiZfWnDkRXmJPB34l5HfgJ+ucPbLaoDs1xgoAszn1tHw2s1ewF/xigl1ww2Ie3RwzaJ0nGPcS9oNDCXJz6S/X8xLyhR+YYhPU5cabqbM0+OfOkO7e8Bx7Qck05gCaCiFsoaApLwPQPjbnp6gWSbJMsbbFvnf5jzrg7j2ndGoQ6GQTpY4mVFqZUnmJZVk5z5hXHA6lCaqqVa1qVata1apW9b9X/wL3wB5NTABXpQAAAABJRU5ErkJggg==",
                         "uid": userId,
-                        "bio": "I am new here."
+                        "bio": "I am new here.",
+                        "BackImageURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAAB6CAMAAABHh7fWAAAAKlBMVEXY4uP////5+vvo7u7e5ufb5eXw9PTs8fHk6+z1+Pjh6en7/f3V4eHn7O4uLtgkAAACOElEQVRoge2ay5qDIAxGRVAuOu//uiO2Tq03Ev2ji8lZdnO+SBIgtKoURVEURRGldylY+xNSavo7vU1qazNR1226Tdx2ZkHnmzvM7dL7opX29nZbnAmii97EfbMxUdK8WuTFkoutuDsWZ5yQuRDzGLeMuy6bhyqXMB9m2IeIz/ODqvrGos0N1WwMWr3Tw7YA9zVG0OiwPUftoWpCSX/okObEMWN7Gut7YxON2E4mgFsYK78zuB2MsGVJqZlZZgzunEju3xO4Pq5qEgGmfjDNHqzrB9UPNlLOGSWD3LAf3DQfPCo8eUCqOGqsmRM2OGhG2NiVzpD7OK5//0GsbZGZCumSKzPUKI0zMlIjjfJYQW6YUmpqIiOFicNcE57ahd3AO4Gq+qbZCRzewzboG78ez9pbxrOZ5GdFHn26dSTeVy7YgXBbuIpyF0MpuRCsH7EhuPEncVzw6wefoae0Pkg+eDUhHm5dnZepcmePvW97tA789RP9wte1yHuPJR3LPkTUQMOyLlzv0AHyo+e8Y/nVxz7HvNTPiZfWnDkRXmJPB34l5HfgJ+ucPbLaoDs1xgoAszn1tHw2s1ewF/xigl1ww2Ie3RwzaJ0nGPcS9oNDCXJz6S/X8xLyhR+YYhPU5cabqbM0+OfOkO7e8Bx7Qck05gCaCiFsoaApLwPQPjbnp6gWSbJMsbbFvnf5jzrg7j2ndGoQ6GQTpY4mVFqZUnmJZVk5z5hXHA6lCaqqVa1qVata1apW9b9X/wL3wB5NTABXpQAAAABJRU5ErkJggg=="
                     ]
                     
                     // Reference to Storage
