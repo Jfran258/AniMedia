@@ -44,7 +44,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             return
         }
         
-        let urlString = "https://api.jikan.moe/v4/anime?q=\(query)&order_by=members&sort=desc&sfw"
+        let urlString = "https://api.jikan.moe/v4/anime?q=\(query)&sfw"
         
         // Taking care of spaces in query string
         let fixedURL = urlString.replacingOccurrences(of: " ", with: "%20")
@@ -72,7 +72,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         let indexPath = IndexPath(row: 0, section: 0)
         
         if self.shows.count != 0 {
-            tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
         }
         
     }
@@ -121,6 +121,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             cell.typeLabel.text = type
         } else {
             cell.typeLabel.text = "N/A"
+        }
+        
+        // Set air date
+        if let season = show["season"] as? String, let year = show["year"] as? Int {
+            cell.airedLabel.text = "\(season.capitalized) \(year)"
+        } else {
+            if let year = show["year"] as? Int {
+                print(year)
+            } else {
+                cell.airedLabel.text = " "
+            }
         }
         
         // Get rid of tapped item highlight effect

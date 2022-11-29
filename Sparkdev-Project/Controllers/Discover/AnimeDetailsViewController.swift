@@ -98,7 +98,6 @@ class AnimeDetailsViewController: UIViewController {
         } else {
             if let aired = anime["aired"] as? [String: AnyObject] {
                 if let string = aired["string"] as? String {
-                    print(string)
                     seasonLabel.text = string
                 }
             } else {
@@ -108,11 +107,9 @@ class AnimeDetailsViewController: UIViewController {
         
         // Set studio
         if let studios = anime["studios"] as? [[String: Any]] {
-            
             var theStudios = [String]()
             for studio in studios {
                 theStudios.append(studio["name"] as! String)
-                //print(studio["name"] as! String, terminator: " ")
             }
             print()
             
@@ -137,9 +134,7 @@ class AnimeDetailsViewController: UIViewController {
             var theGenres = [String]()
             for genre in genres {
                 theGenres.append(genre["name"] as! String)
-                //print(genre["name"] as! String, terminator: " ")
             }
-            print()
             
             genresLabel.text = theGenres.joined(separator: ", ")
             genresLabel.sizeToFit()
