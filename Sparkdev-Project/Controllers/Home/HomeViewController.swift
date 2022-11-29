@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         postsTableView.delegate = self
         postsTableView.dataSource = self
         
+        navigationItem.backButtonTitle = ""
+        
         getPosts()
     }
     
@@ -29,7 +31,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // Grabbing all the posts
         databaseRef.child("posts").observe(.childAdded) { (snapshot) in
-            // Getting Each post
+            // Getting each post
             if let dataArray = snapshot.value as? [String: Any] {
                 // Getting the post data
                 if let userId = dataArray["userID"] as? String, let userName = dataArray["username"] as? String, let postText = dataArray["postText"] as? String, let postId = dataArray["postID"] as? String, let pathToImage = dataArray["pathToImage"] as? String  {
@@ -84,13 +86,31 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
 
         cell.postText.text = post.postText
-        //cell.postText.sizeToFit()
         
         cell.postBodyView.layer.cornerRadius = 15
         cell.postBodyView.layer.borderWidth = 1.0
         cell.postBodyView.layer.masksToBounds = false
         cell.postBodyView.clipsToBounds = true
         
+        cell.selectionStyle = .none
+        
         return cell
+    }
+    
+    // When a row is tapped on
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // Create the view to be opened
+        let postDetailsView = self.storyboard?.instantiateViewController(withIdentifier: "postDetails") as! PostViewController
+        
+        // The selected show
+        let post = posts[indexPath.item]
+        
+        // Passing selected post to post details screen
+        postDetailsView.post = post
+        
+        // segue to details screen
+        self.navigationController?.pushViewController(postDetailsView, animated: true)
     }
 }

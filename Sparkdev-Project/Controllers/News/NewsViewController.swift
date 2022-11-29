@@ -8,17 +8,19 @@
 import UIKit
 import SwiftSoup
 import AlamofireImage
+import SafariServices
 
-class NewsViewController: UIViewController, UITableViewDataSource {
+class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var newsTableView: UITableView!
     
     var data = [News]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        table.dataSource = self
+        newsTableView.dataSource = self
+        newsTableView.delegate = self
         
         getNews()
     }
@@ -66,7 +68,7 @@ class NewsViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let article = data[indexPath.row]
         
-        let cell = table.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! CustomTableViewCell
+        let cell = newsTableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
         
         cell.title.text = article.title
         
@@ -75,6 +77,24 @@ class NewsViewController: UIViewController, UITableViewDataSource {
         
         cell.date.text = article.date
         
+        cell.selectionStyle = .none
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let program = data[indexPath.row]
+        
+        let redirect = program.link
+        
+        browser(url: redirect)
+    }
+    
+    func browser(url: String){
+        let url = URL(string: url)!
+        
+        let vc = SFSafariViewController(url: url)
+        
+        present(vc, animated: true)
     }
 }
