@@ -18,7 +18,8 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var SaveBtn: UIButton!
     
-    @IBOutlet weak var bioSetting: UITextField!
+    //@IBOutlet weak var bioSetting: UITextField!
+    @IBOutlet weak var bioSetting2: UITextView!
     
     public var completionHandlerProfile: ((String?) -> Void)?
     public var completionHandlerBio: ((String?) -> Void)?
@@ -42,14 +43,14 @@ class SettingsViewController: UIViewController {
         
         SaveBtn.layer.cornerRadius = 12
         
-        bioSetting.borderStyle = .none
-        bioSetting.layer.cornerRadius = 12
+        //bioSetting2.borderStyle = .none
+        bioSetting2.layer.cornerRadius = 12
         let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 20))
         let paddingView4: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 3, height: 20))
-        bioSetting.leftView = paddingView
-        bioSetting.leftViewMode = .always
-        bioSetting.rightViewMode = .always
-        bioSetting.rightView = paddingView4
+       // bioSetting2.leftView = paddingView
+       // bioSetting2.leftViewMode = .always
+       // bioSetting2.rightViewMode = .always
+       // bioSetting2.rightView = paddingView4
         
         usernameSetting.borderStyle = .none
         usernameSetting.layer.cornerRadius = 12
@@ -144,9 +145,9 @@ class SettingsViewController: UIViewController {
         if (!UsernameText!.isEmpty) {
             completionHandlerProfile?(usernameSetting.text)
         }
-        let BioText2 = bioSetting.text
+        let BioText2 = bioSetting2.text
         if (!BioText2!.isEmpty) {
-            completionHandlerBio?(bioSetting.text)
+            completionHandlerBio?(bioSetting2.text)
         }
         
         //dismiss(animated: true, completion: nil)
@@ -162,11 +163,11 @@ class SettingsViewController: UIViewController {
         
         //let US = completionHandlerProfile?(usernameSetting.text)
         let text = usernameSetting.text
-        let BioText = bioSetting.text
+        let BioText = bioSetting2.text
         if (!text!.isEmpty || !BioText!.isEmpty) {
             userRef.updateChildValues([
                 "username": usernameSetting.text!,
-                "bio": bioSetting.text!
+                "bio": bioSetting2.text!
             ])
         }
        
