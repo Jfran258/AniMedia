@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var backImage: UIImageView!
     
+
+    @IBOutlet weak var Gear: UIBarButtonItem!
     @IBOutlet weak var usernameView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,9 @@ class ProfileViewController: UIViewController {
         
         
         usernameView.layer.cornerRadius = 20
-
+        var myImage = UIImage(named: "myImage")
+        Gear.setBackgroundImage(myImage, for: .normal, barMetrics: .default)
+        
         getUserData()
     }
     
@@ -89,20 +93,14 @@ class ProfileViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
         navigationController?.pushViewController(vc, animated: true)
         vc.modalPresentationStyle = .fullScreen
-        
+        print("TEXT2")
         vc.completionHandlerProfile = { text in
-            if (text != "") {
                 self.usernameLabel.text = text
-            } else {
-                self.getUserData()
-            }
+            
         }
         vc.completionHandlerBio = { text in
-            if (text != "") {
                 self.bioLabel.text = text
-            } else {
-                self.getUserData()
-            }
+            
         }
         vc.completionHandlerPicture = { text in
             let text2 = URL(string: text!)

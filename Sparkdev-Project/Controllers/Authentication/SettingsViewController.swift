@@ -13,29 +13,52 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameSetting: UITextField!
     
-    @IBOutlet weak var SaveButton: UIButton!
-    
     @IBOutlet weak var backImage: UIImageView!
     
     
+    @IBOutlet weak var SaveBtn: UIButton!
+    
     @IBOutlet weak var bioSetting: UITextField!
+    
     public var completionHandlerProfile: ((String?) -> Void)?
     public var completionHandlerBio: ((String?) -> Void)?
     public var completionHandlerPicture: ((String?) -> Void)?
     public var completionHandlerBackPicture: ((String?) -> Void)?
     
     var imagePicker: UIImagePickerController!
+    var imagePicker2: UIImagePickerController!
  
+   var check = true
     
     let storage = Storage.storage().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
-        SaveButton.layer.cornerRadius = 17
+        
         
         profileImage.layer.borderWidth = 1.0
         profileImage.layer.masksToBounds = false
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.clipsToBounds = true
+        
+        SaveBtn.layer.cornerRadius = 12
+        
+        bioSetting.borderStyle = .none
+        bioSetting.layer.cornerRadius = 12
+        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 20))
+        let paddingView4: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 3, height: 20))
+        bioSetting.leftView = paddingView
+        bioSetting.leftViewMode = .always
+        bioSetting.rightViewMode = .always
+        bioSetting.rightView = paddingView4
+        
+        usernameSetting.borderStyle = .none
+        usernameSetting.layer.cornerRadius = 12
+        let paddingView2: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 20))
+        let paddingView3: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 2, height: 20))
+        usernameSetting.leftView = paddingView2
+        usernameSetting.rightView = paddingView3
+        usernameSetting.rightViewMode = .always
+        usernameSetting.leftViewMode = .always
         
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
                     profileImage.isUserInteractionEnabled = true
@@ -83,6 +106,7 @@ class SettingsViewController: UIViewController {
             //print(aUser.bio)
             print(aUser.profileUrl)
             print(aUser.uid)
+            print(aUser.backPImageUrl)
             
             let newUrl = URL(string: aUser.profileUrl)
             let newUrl2 = URL(string: aUser.backPImageUrl)
@@ -96,23 +120,32 @@ class SettingsViewController: UIViewController {
         
     }
     
-    @objc func openImagePicker(_ sender:Any) {
+    @objc func openImagePicker(recognizer: UITapGestureRecognizer) {
             //Opens Image Picker
+        print("Profile Test Tapped")
+        check = true
             self.present(imagePicker, animated: true, completion: nil)
+        
+       
         }
     
-    @objc func openImagePicker2(_ sender:Any) {
+    @objc func openImagePicker2(recognizer: UITapGestureRecognizer) {
             //Opens Image Picker
+        
+        print("Image was tapped")
+        check = false
             self.present(imagePicker, animated: true, completion: nil)
         }
    
 
 
-    @IBAction func didTapSave(_ sender: Any) {
-        if (usernameSetting.text != "") {
+    @IBAction func didTepSave(_ sender: Any) {
+        let UsernameText = usernameSetting.text
+        if (!UsernameText!.isEmpty) {
             completionHandlerProfile?(usernameSetting.text)
         }
-        if (usernameSetting.text != "") {
+        let BioText2 = bioSetting.text
+        if (!BioText2!.isEmpty) {
             completionHandlerBio?(bioSetting.text)
         }
         
@@ -128,18 +161,22 @@ class SettingsViewController: UIViewController {
         let userRef = databaseRef.child("users").child(userId)
         
         //let US = completionHandlerProfile?(usernameSetting.text)
-        if (usernameSetting.text != "" || bioSetting.text != "") {
+        let text = usernameSetting.text
+        let BioText = bioSetting.text
+        if (!text!.isEmpty || !BioText!.isEmpty) {
             userRef.updateChildValues([
                 "username": usernameSetting.text!,
                 "bio": bioSetting.text!
             ])
         }
+       
         _ = UIStoryboard(name: "Main", bundle: nil)
         
         navigationController?.popViewController(animated: true)
         
     }
-}
+    }
+   
 
 struct User {
     var userName: String
@@ -157,36 +194,40 @@ struct User {
         profileUrl = dict["profileImageUrl"] as! String
         backPImageUrl = dict["BackImageURL"] as! String
     }
-    
+
 }
 
 extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
-        
-        
-        func imagePickerController(_ pickerBack: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    }
+    
+    func imagePickerController(_ pickerBack: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if (!check) {
+            print("BACK")
             if let pickedBackImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
                 guard let jpegBackData = pickedBackImage.pngData() else {
+                    print("png test")
                     return
                 }
                 guard let userId = Auth.auth().currentUser?.uid else {
                     return
                 }
+                print("TEST7")
                 storage.child("\(userId)/backImage.png").child("back.png").putData(jpegBackData, metadata: nil, completion: {_, error in
                     guard error == nil else {
                         print("Failed to upload")
                         return
                     }
-                    
+                    print("TEST6")
                     self.storage.child("\(userId)/backImage.png").child("back.png").downloadURL(completion: {url, error in
                         guard let url2 = url, error == nil else {
                             return
                         }
+                        print("TEST%")
                         let urlString2 = url2.absoluteString
                         print("Download BackURL:  \(urlString2)")
-                        
+                        print("TEST77")
                         self.completionHandlerBackPicture?(urlString2)
                         // Reference to database
                         let databaseRef = Database.database().reference()
@@ -203,54 +244,100 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
                 self.backImage.image = pickedBackImage
                 
             }
+          
             pickerBack.dismiss(animated: true, completion: nil)
-            
-        }
-    }
-            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        } else {
+            print("FRONT")
+            if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+                guard let jpegData = pickedImage.pngData() else {
+                    return
+                }
                 
-                
-                if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-                    guard let jpegData = pickedImage.pngData() else {
+                guard let userId = Auth.auth().currentUser?.uid else {
+                    return
+                }
+                storage.child("\(userId)/profileImage.png").child("profileImage.png").putData(jpegData, metadata: nil, completion: {_, error in
+                    guard error == nil else {
+                        print("Failed to upload")
                         return
                     }
                     
-                    guard let userId = Auth.auth().currentUser?.uid else {
-                        return
-                    }
-                    storage.child("\(userId)/profileImage.png").child("profileImage.png").putData(jpegData, metadata: nil, completion: {_, error in
-                        guard error == nil else {
-                            print("Failed to upload")
+                    self.storage.child("\(userId)/profileImage.png").child("profileImage.png").downloadURL(completion: {url, error in
+                        guard let url = url, error == nil else {
                             return
                         }
+                        let urlString = url.absoluteString
+                        print("Download URL:  \(urlString)")
                         
-                        self.storage.child("\(userId)/profileImage.png").child("profileImage.png").downloadURL(completion: {url, error in
-                            guard let url = url, error == nil else {
-                                return
-                            }
-                            let urlString = url.absoluteString
-                            print("Download URL:  \(urlString)")
-                            
-                            self.completionHandlerPicture?(urlString)
-                            // Reference to database
-                            let databaseRef = Database.database().reference()
-                            
-                            // Reference to current user
-                            let userRef = databaseRef.child("users").child(userId)
-                            
-                            //let US = completionHandlerProfile?(usernameSetting.text)
-                            userRef.updateChildValues([
-                                "profileImageUrl": urlString
-                            ])
-                        })
+                        self.completionHandlerPicture?(urlString)
+                        // Reference to database
+                        let databaseRef = Database.database().reference()
+                        
+                        // Reference to current user
+                        let userRef = databaseRef.child("users").child(userId)
+                        
+                        //let US = completionHandlerProfile?(usernameSetting.text)
+                        userRef.updateChildValues([
+                            "profileImageUrl": urlString
+                        ])
                     })
-                    self.profileImage.image = pickedImage
+                })
+                self.profileImage.image = pickedImage
+            }
+            
+            
+            pickerBack.dismiss(animated: true, completion: nil)
+        }
+                
+    }
+    
+    /*
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            guard let jpegData = pickedImage.pngData() else {
+                return
+            }
+            
+            guard let userId = Auth.auth().currentUser?.uid else {
+                return
+            }
+            storage.child("\(userId)/profileImage.png").child("profileImage.png").putData(jpegData, metadata: nil, completion: {_, error in
+                guard error == nil else {
+                    print("Failed to upload")
+                    return
                 }
                 
-                
-                picker.dismiss(animated: true, completion: nil)
-            }
+                self.storage.child("\(userId)/profileImage.png").child("profileImage.png").downloadURL(completion: {url, error in
+                    guard let url = url, error == nil else {
+                        return
+                    }
+                    let urlString = url.absoluteString
+                    print("Download URL:  \(urlString)")
+                    
+                    self.completionHandlerPicture?(urlString)
+                    // Reference to database
+                    let databaseRef = Database.database().reference()
+                    
+                    // Reference to current user
+                    let userRef = databaseRef.child("users").child(userId)
+                    
+                    //let US = completionHandlerProfile?(usernameSetting.text)
+                    userRef.updateChildValues([
+                        "profileImageUrl": urlString
+                    ])
+                })
+            })
+            self.profileImage.image = pickedImage
         }
+        
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+ */
+}
         
     
     
