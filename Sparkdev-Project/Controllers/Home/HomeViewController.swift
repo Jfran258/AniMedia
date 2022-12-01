@@ -7,9 +7,13 @@
 
 import UIKit
 import Firebase
+import AlamofireImage
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var posts = [Post]()
+    
+    let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var postsTableView: UITableView!
     
@@ -23,9 +27,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationItem.backButtonTitle = ""
         
         getPosts()
+        
+        refreshControl.addTarget(self, action: #selector(getPosts), for: .valueChanged)
+        postsTableView.refreshControl = refreshControl
+        refreshControl.tintColor = .white
     }
     
-    func getPosts() {
+    @objc func getPosts() {
+        posts.removeAll()
+        
         // Reference to database
         let databaseRef = Database.database().reference()
 
@@ -39,11 +49,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     // Creating post object
                     let post = Post(userName: userName, uid: userId, postText: postText, imageUrl: pathToImage, postId: postId)
                     
+                    print(post.imageUrl)
+                    
                     // Add post to posts array
                     self.posts.insert(post, at: 0)
                     
                     // Update the table view
                     self.postsTableView.reloadData()
+                    
+                    self.refreshControl.endRefreshing()
                 }
             }
         }
@@ -68,12 +82,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         userRef.observeSingleEvent(of: .value) { snapshot in
             // Create User object
             let aUser = User(withSnapShot: snapshot)
-            print(aUser)
-
-            print(aUser.userName)
-            print(aUser.bio)
-            print(aUser.profileUrl)
-            print(aUser.uid)
             
             let newUrl = URL(string: aUser.profileUrl)
             
@@ -92,6 +100,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.postBodyView.layer.masksToBounds = false
         cell.postBodyView.clipsToBounds = true
         
+        // If imageUrl is None, make imageview height 0. Otherwise display image as normal
+        if post.imageUrl == "None" {
+            //cell.postImage.image = nil
+            cell.postImageHeightConstraint.constant = 0
+            //cell.layoutIfNeeded()
+        } else {
+            cell.postImage.layer.cornerRadius = 10
+            //cell.postImage.heightAnchor.constraint(equalToConstant: CGFloat(60)).isActive = true
+
+            cell.postImage.af.setImage(withURL: URL(string: post.imageUrl)!)
+            cell.postImageHeightConstraint.constant = 198
+        }
+        //cell.postImage.af.setImage(withURL: URL(string: post.imageUrl)!)
+        //cell.postImage.heightAnchor.constraint(equalToConstant: CGFloat(0)).isActive = true
+        //cell.postImageHeightConstraint.constant = 0
         cell.selectionStyle = .none
         
         return cell
