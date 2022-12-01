@@ -28,13 +28,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         getPosts()
         
-        refreshControl.addTarget(self, action: #selector(getPosts), for: .valueChanged)
-        postsTableView.refreshControl = refreshControl
-        refreshControl.tintColor = .white
+        //refreshControl.addTarget(self, action: #selector(getPosts), for: .valueChanged)
+        //postsTableView.refreshControl = refreshControl
+        //refreshControl.tintColor = .white
     }
     
-    @objc func getPosts() {
-        posts.removeAll()
+    func getPosts() {
+        //posts.removeAll()
         
         // Reference to database
         let databaseRef = Database.database().reference()
