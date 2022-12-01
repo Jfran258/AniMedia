@@ -29,6 +29,8 @@
 		499BCE5129077B650035BA71 /* UpcomingShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BCE5029077B650035BA71 /* UpcomingShowCell.swift */; };
 		49A1B31828F79C75000E1DDF /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1B31728F79C74000E1DDF /* ChatCell.swift */; };
 		49A1B31A28F7A11E000E1DDF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1B31928F7A11E000E1DDF /* Message.swift */; };
+		49B0CCA1293671AC00306A3C /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0CCA0293671AC00306A3C /* CommentCell.swift */; };
+		49B0CCA329369CF500306A3C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0CCA229369CF500306A3C /* Comment.swift */; };
 		49B8018E291F1D5600514B5C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B8018D291F1D5600514B5C /* News.swift */; };
 		52B07654BF4FAACF6B9D3FA1 /* Pods_Sparkdev_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57CF43A70995262F1224578 /* Pods_Sparkdev_Project.framework */; };
 		71491FF42928153400269EE9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71491FF32928153400269EE9 /* SettingsViewController.swift */; };
@@ -67,6 +69,8 @@
 		499BCE5029077B650035BA71 /* UpcomingShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingShowCell.swift; sourceTree = "<group>"; };
 		49A1B31728F79C74000E1DDF /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		49A1B31928F7A11E000E1DDF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		49B0CCA0293671AC00306A3C /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		49B0CCA229369CF500306A3C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		49B8018D291F1D5600514B5C /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		71491FF32928153400269EE9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		714FF7E128FD9BE700401EF0 /* LoginsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginsViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				49A1B31928F7A11E000E1DDF /* Message.swift */,
 				49B8018D291F1D5600514B5C /* News.swift */,
 				494EDFA529316EC80070101E /* Post.swift */,
+				49B0CCA229369CF500306A3C /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				49A1B31728F79C74000E1DDF /* ChatCell.swift */,
 				492AFD2A2912B73C003120FC /* SearchTableViewCell.swift */,
 				4934B7FB2930063200BC38CD /* PostCell.swift */,
+				49B0CCA0293671AC00306A3C /* CommentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -406,6 +412,8 @@
 				493C5B0229346C8100208F55 /* PostViewController.swift in Sources */,
 				4945C8992908555200FB674C /* TopShowCell.swift in Sources */,
 				499BCE4D29072D010035BA71 /* CurrentlyAiringShowCell.swift in Sources */,
+				49B0CCA329369CF500306A3C /* Comment.swift in Sources */,
+				49B0CCA1293671AC00306A3C /* CommentCell.swift in Sources */,
 				71491FF42928153400269EE9 /* SettingsViewController.swift in Sources */,
 				714FF7E428FF347000401EF0 /* LaunchViewController.swift in Sources */,
 				499BCE5129077B650035BA71 /* UpcomingShowCell.swift in Sources */,

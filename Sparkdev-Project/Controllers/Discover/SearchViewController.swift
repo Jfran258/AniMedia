@@ -44,7 +44,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             return
         }
         
-        let urlString = "https://api.jikan.moe/v4/anime?q=\(query)&sfw"
+        //let urlString = "https://api.jikan.moe/v4/anime?q=\(query)&sfw"
+        let urlString = "https://api.jikan.moe/v4/anime?q=\(query)&order_by=members&sort=desc&sfw"
         
         // Taking care of spaces in query string
         let fixedURL = urlString.replacingOccurrences(of: " ", with: "%20")

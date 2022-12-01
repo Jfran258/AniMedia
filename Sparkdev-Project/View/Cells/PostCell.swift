@@ -12,6 +12,25 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var postBodyView: UIView!
     @IBOutlet weak var postProfileImage: UIImageView!
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
+    
+    var likes = 0
+    var isLiked = false
+    
+    @IBAction func likePressed(_ sender: UIButton) {
+        isLiked.toggle()
+        
+        if isLiked {
+            likes = likes + 1
+            likeButton.setTitle("\(likes)", for: .normal)
+            likeButton.configuration?.baseForegroundColor = UIColor.black
+        } else {
+            likes = likes - 1
+            likeButton.setTitle("\(likes)", for: .normal)
+            likeButton.configuration?.baseForegroundColor = UIColor.gray
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +42,7 @@ class PostCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    // Dynamic Cell Height
+    @IBOutlet weak var postImageHeightConstraint: NSLayoutConstraint!
 }
