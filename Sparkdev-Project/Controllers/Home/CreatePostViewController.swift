@@ -17,14 +17,20 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var selectButton: UIButton!
     
-    var imagePicker: UIImagePickerController!
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //imagePicker.delegate = self
+        imagePicker.delegate = self
+        postTextView.becomeFirstResponder()
     }
+    
+    @IBAction func cancelPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func postPressed(_ sender: UIButton) {
         // Get userId of current logged in user
@@ -115,15 +121,14 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func picSelectPressed(_ sender: UIButton) {
-        /*
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         
         self.present(imagePicker, animated: true, completion: nil)
-         */
-        selectButton.isHidden = true
+         
+        //selectButton.isHidden = true
         
-        postImageView.af.setImage(withURL: URL(string: "https://screenmusings.org/movie/blu-ray/Your-Name/images/Your-Name-001.jpg")!)
+        //postImageView.af.setImage(withURL: URL(string: "https://screenmusings.org/movie/blu-ray/Your-Name/images/Your-Name-001.jpg")!)
     }
     
 }
