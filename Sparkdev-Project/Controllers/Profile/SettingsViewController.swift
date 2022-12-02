@@ -19,6 +19,9 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var SaveBtn: UIButton!
     
+    @IBOutlet weak var LogoutUI: UIButton!
+    
+    
     public var completionHandlerProfile: ((String?) -> Void)?
     public var completionHandlerBio: ((String?) -> Void)?
     public var completionHandlerPicture: ((String?) -> Void)?
@@ -26,6 +29,19 @@ class SettingsViewController: UIViewController {
     
     var imagePicker: UIImagePickerController!
     var check = true
+    
+    
+    
+    
+    @IBAction func LogoutButton(_ sender: Any) {
+        try! Auth.auth().signOut()
+            
+              if let storyboard = self.storyboard {
+                  let vc = storyboard.instantiateViewController(withIdentifier: "firstNavigationController") as! UINavigationController
+                  self.present(vc, animated: false, completion: nil)
+              }
+    }
+    
     
     let storage = Storage.storage().reference()
     override func viewDidLoad() {
@@ -38,6 +54,9 @@ class SettingsViewController: UIViewController {
         profileImage.clipsToBounds = true
         
         SaveBtn.layer.cornerRadius = 12
+        LogoutUI.layer.cornerRadius = 12
+        
+        
         
         //bioSetting2.borderStyle = .none
         bioSetting2.layer.cornerRadius = 12
@@ -81,6 +100,12 @@ class SettingsViewController: UIViewController {
         
  
     }
+    
+    
+ 
+    
+    
+    
     func getUserData() {
         // Do any additional setup after loading the view.
         guard let userId = Auth.auth().currentUser?.uid else {
