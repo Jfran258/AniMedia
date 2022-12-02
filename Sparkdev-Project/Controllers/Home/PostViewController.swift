@@ -19,6 +19,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postImageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var postBodyHeightConstraint: NSLayoutConstraint!
     
     var post: Post!
     
@@ -63,24 +64,14 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Set post image
         if post.imageUrl == "None" {
-            print(post.imageUrl)
-
-            //postImageView.af.setImage(withURL: URL(string: post.imageUrl)!)
-            //postImageView.postImageHeightConstraint.constant = 0
-    
+            postImageView.af.setImage(withURL: URL(string: post.imageUrl)!)
+            postImageViewHeightConstraint.constant = 0
+            postBodyHeightConstraint.constant = 134
         } else {
-           // let newUrl = URL(string: post.imageUrl)
-            //print("\(newUrl!)")
-            //postImageView.af.setImage(withURL: URL(string: post.imageUrl)!)
-  
-            //postImageView.layer.cornerRadius = 10
-            //postImageView.postImageHeightConstraint.constant = 0
-            //postImageView.af.setImage(withURL: newUrl!)
+            postImageView.af.setImage(withURL: URL(string: post.imageUrl)!)
+            postImageView.layer.cornerRadius = 10
+            postBodyHeightConstraint.constant = 380
         }
-        
-        //postBodyView.layer.cornerRadius = 15
-        //postBodyView.layer.borderWidth = 1
-        
         
         let thickness: CGFloat = 2.0
         let bottomBorder = CALayer()
@@ -88,15 +79,8 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         bottomBorder.backgroundColor = UIColor.darkGray.cgColor
         //bottomBorder.borderWidth = 1
         
-        postBodyView.layer.addSublayer(bottomBorder)
+        //postBodyView.layer.addSublayer(bottomBorder)
         
-        //postBodyView.layer.borderColor = .init(red: 5, green: 5, blue: 5, alpha: 1)
-        /*
-        cell.postBodyView.layer.cornerRadius = 15
-        cell.postBodyView.layer.borderWidth = 1.0
-        cell.postBodyView.layer.masksToBounds = false
-        cell.postBodyView.clipsToBounds = true
-        */
         getComments()
         
         let date = Date()
@@ -196,7 +180,6 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = commentsTableView.dequeueReusableCell(withIdentifier: "commentCell") as! CommentCell
         
-        cell.usernameLabel.text = comment.senderName
         cell.commentLabel.text = comment.messageText
         
         // Reference to database
@@ -216,13 +199,9 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.profileImageView.af.setImage(withURL: newUrl!)
             cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.size.width / 2
             
+            cell.usernameLabel.text = aUser.userName
         }
         
-        /*
-        cell.contentView.layer.borderColor = UIColor.gray.cgColor
-        cell.contentView.layer.borderWidth = 0.5
-        cell.separatorInset
-        */
         return cell
     }
 }
