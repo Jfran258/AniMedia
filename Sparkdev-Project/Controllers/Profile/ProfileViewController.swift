@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     
+    @IBOutlet weak var backImage: UIImageView!
     @IBOutlet weak var usernameView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +55,11 @@ class ProfileViewController: UIViewController {
             print(aUser.uid)
             
             let newUrl = URL(string: aUser.profileUrl)
+            let newUrl2 = URL(string: aUser.backImage)
             
             self.usernameLabel.text = aUser.userName
             self.profileImage.af.setImage(withURL: newUrl!)
+            self.backImage.af.setImage(withURL: newUrl2!)
             self.bioLabel.text = aUser.bio
         }
         
@@ -68,6 +71,7 @@ class ProfileViewController: UIViewController {
         var bio: String
         var uid: String
         var profileUrl: String
+        var backImage: String
         
         init(withSnapShot: DataSnapshot) {
             let dict = withSnapShot.value as! [String: AnyObject]
@@ -76,6 +80,7 @@ class ProfileViewController: UIViewController {
             userName = dict["username"] as! String
             bio = dict["bio"] as! String
             profileUrl = dict["profileImageUrl"] as! String
+            backImage = dict["BackImageURL"] as! String
         }
     }
     
@@ -84,27 +89,23 @@ class ProfileViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
         navigationController?.pushViewController(vc, animated: true)
         vc.modalPresentationStyle = .fullScreen
-        
+
         vc.completionHandlerProfile = { text in
-            if (text != "") {
                 self.usernameLabel.text = text
-            } else {
-                self.getUserData()
-            }
+            
         }
         vc.completionHandlerBio = { text in
-            if (text != "") {
                 self.bioLabel.text = text
-            } else {
-                self.getUserData()
-            }
+            
         }
         vc.completionHandlerPicture = { text in
             let text2 = URL(string: text!)
             self.profileImage.af.setImage(withURL: text2!)
         }
-         
-        //present(vc, animated: true)
+        vc.completionHandlerBackPicture = { text in
+            let text3 = URL(string: text!)
+            self.backImage.af.setImage(withURL: text3!)
+        }
     }
     
 
