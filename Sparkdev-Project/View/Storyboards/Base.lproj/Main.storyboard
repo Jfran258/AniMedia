@@ -15,7 +15,7 @@
         <!--LoginsViewController-->
         <scene sceneID="fNR-Vy-EU5">
             <objects>
-                <viewController title="LoginsViewController" id="hgA-Xu-4LN" customClass="LoginsViewController" customModule="Sparkdev_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="LoginsViewController" modalPresentationStyle="fullScreen" id="hgA-Xu-4LN" customClass="LoginsViewController" customModule="Sparkdev_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AFn-hB-mXA">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1149,12 +1149,24 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9Z-nv-F17">
+                                <rect key="frame" x="148" y="700" width="133" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.70980392160000005" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <action selector="LogoutButton:" destination="L4e-JI-Ge6" eventType="touchUpInside" id="vX3-fL-nE7"/>
+                                    <action selector="didTapSave:" destination="L4e-JI-Ge6" eventType="touchUpInside" id="3U4-o7-eVQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OoR-n7-EJh"/>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.13725490196078433" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="pkh-4c-LhO"/>
                     <connections>
+                        <outlet property="LogoutUI" destination="y9Z-nv-F17" id="JyP-JU-81L"/>
                         <outlet property="SaveBtn" destination="Q47-7l-aNk" id="bxX-ta-pCw"/>
                         <outlet property="backImage" destination="YbD-Ca-bFi" id="VOo-Le-ia2"/>
                         <outlet property="bioSetting2" destination="Jhq-YP-cPv" id="Rgy-jw-rCw"/>
@@ -1169,7 +1181,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PhM-OD-P0t">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rdk-0w-J4g" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="firstNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="rdk-0w-J4g" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="f6R-rJ-CJn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VnB-NE-WLV">
