@@ -30,6 +30,10 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+                 view.addGestureRecognizer(tapGesture)
+
+        
         commentsTableView.delegate = self
         commentsTableView.dataSource = self
         

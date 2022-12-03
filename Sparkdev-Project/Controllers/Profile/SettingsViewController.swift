@@ -30,22 +30,23 @@ class SettingsViewController: UIViewController {
     var imagePicker: UIImagePickerController!
     var check = true
     
-    
-    
-    
     @IBAction func LogoutButton(_ sender: Any) {
         try! Auth.auth().signOut()
-            
-              if let storyboard = self.storyboard {
-                  let vc = storyboard.instantiateViewController(withIdentifier: "firstNavigationController") as! UINavigationController
-                  self.present(vc, animated: false, completion: nil)
-              }
+        
+        if let storyboard = self.storyboard {
+            let vc = storyboard.instantiateViewController(withIdentifier: "firstNavigationController") as! UINavigationController
+            self.present(vc, animated: false, completion: nil)
+        }
     }
     
     
     let storage = Storage.storage().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+                 view.addGestureRecognizer(tapGesture)
+
         
         
         profileImage.layer.borderWidth = 1.0
@@ -62,10 +63,10 @@ class SettingsViewController: UIViewController {
         bioSetting2.layer.cornerRadius = 12
         //let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 20))
         //let paddingView4: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 3, height: 20))
-       // bioSetting2.leftView = paddingView
-       // bioSetting2.leftViewMode = .always
-       // bioSetting2.rightViewMode = .always
-       // bioSetting2.rightView = paddingView4
+        // bioSetting2.leftView = paddingView
+        // bioSetting2.leftViewMode = .always
+        // bioSetting2.rightViewMode = .always
+        // bioSetting2.rightView = paddingView4
         
         usernameSetting.borderStyle = .none
         usernameSetting.layer.cornerRadius = 12
@@ -77,34 +78,25 @@ class SettingsViewController: UIViewController {
         usernameSetting.leftViewMode = .always
         
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
-                    profileImage.isUserInteractionEnabled = true
-                    profileImage.addGestureRecognizer(imageTap)
-                    profileImage.layer.cornerRadius = profileImage.bounds.height / 2
-                    profileImage.clipsToBounds = true
-                    //taptochange.addTarget(self, action: #selector(openImagePicker), for: .touchUpInside)
+        profileImage.isUserInteractionEnabled = true
+        profileImage.addGestureRecognizer(imageTap)
+        profileImage.layer.cornerRadius = profileImage.bounds.height / 2
+        profileImage.clipsToBounds = true
+        //taptochange.addTarget(self, action: #selector(openImagePicker), for: .touchUpInside)
         
         let imageTap2 = UITapGestureRecognizer(target: self, action: #selector(openImagePicker2))
         
-                    backImage.isUserInteractionEnabled = true
-                    backImage.addGestureRecognizer(imageTap2)
-                    backImage.clipsToBounds = true
-                    
-                    imagePicker = UIImagePickerController()
-                    imagePicker.allowsEditing = true
-                    imagePicker.sourceType = .photoLibrary
-                    imagePicker.delegate = self
-                    
-                    
+        backImage.isUserInteractionEnabled = true
+        backImage.addGestureRecognizer(imageTap2)
+        backImage.clipsToBounds = true
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
         getUserData()
-        
-        
- 
     }
-    
-    
- 
-    
-    
     
     func getUserData() {
         // Do any additional setup after loading the view.
@@ -114,51 +106,51 @@ class SettingsViewController: UIViewController {
         
         // Reference to database
         let databaseRef = Database.database().reference()
-  
+        
         // Reference to current user
         let userRef = databaseRef.child("users").child(userId)
-  
+        
         // Accessing information for that user
         userRef.observeSingleEvent(of: .value) { snapshot in
             // Create User object
             let aUser = User(withSnapShot: snapshot)
             //print(aUser)
-
+            
             //print(aUser.userName)
             //print(aUser.bio)
             print(aUser.profileUrl)
             print(aUser.uid)
-            print(aUser.backPImageUrl)
+            //print(aUser.backPImageUrl)
             
             let newUrl = URL(string: aUser.profileUrl)
-            let newUrl2 = URL(string: aUser.backPImageUrl)
+            //let newUrl2 = URL(string: aUser.backPImageUrl)
             
-           // self.usernameLabel.text = aUser.userName
+            self.usernameSetting.text = aUser.userName
             self.profileImage.af.setImage(withURL: newUrl!)
-            self.backImage.af.setImage(withURL: newUrl2!)
-            //self.bioLabel.text = aUser.bio
+            //self.backImage.af.setImage(withURL: newUrl2!)
+            self.bioSetting2.text = aUser.bio
         }
         
         
     }
     
     @objc func openImagePicker(recognizer: UITapGestureRecognizer) {
-            //Opens Image Picker
-  
-        check = true
-            self.present(imagePicker, animated: true, completion: nil)
+        //Opens Image Picker
         
-       
-        }
+        check = true
+        self.present(imagePicker, animated: true, completion: nil)
+        
+        
+    }
     
     @objc func openImagePicker2(recognizer: UITapGestureRecognizer) {
-            //Opens Image Picker
-
+        //Opens Image Picker
+        
         check = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-   
-
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func didTapSave(_ sender: Any) {
         let UsernameText = usernameSetting.text
         if (!UsernameText!.isEmpty) {
@@ -189,23 +181,23 @@ class SettingsViewController: UIViewController {
                 "bio": bioSetting2.text!
             ])
         }
-       
+        
         _ = UIStoryboard(name: "Main", bundle: nil)
         
         navigationController?.popViewController(animated: true)
         
     }
-    }
-    
-     
-   
+}
+
+
+
 
 struct User {
     var userName: String
     var bio: String
     var uid: String
     var profileUrl: String
-    var backPImageUrl: String
+    //var backPImageUrl: String
     
     init(withSnapShot: DataSnapshot) {
         let dict = withSnapShot.value as! [String: AnyObject]
@@ -214,9 +206,9 @@ struct User {
         userName = dict["username"] as! String
         bio = dict["bio"] as! String
         profileUrl = dict["profileImageUrl"] as! String
-        backPImageUrl = dict["BackImageURL"] as! String
+        //backPImageUrl = dict["BackImageURL"] as! String
     }
-
+    
 }
 
 extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -263,9 +255,9 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
                 self.backImage.image = pickedBackImage
                 
             }
-          
+            
             pickerBack.dismiss(animated: true, completion: nil)
-
+            
         } else {
             print("FRONT")
             if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
@@ -308,6 +300,6 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
             
             pickerBack.dismiss(animated: true, completion: nil)
         }
-                
+        
     }
 }

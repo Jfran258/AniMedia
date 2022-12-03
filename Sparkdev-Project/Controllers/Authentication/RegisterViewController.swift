@@ -25,6 +25,10 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+                 view.addGestureRecognizer(tapGesture)
+
+        
         view.backgroundColor = UIColor(red: 31/255, green: 35/255, blue: 41/255, alpha: 1)
         
         registeremail.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)

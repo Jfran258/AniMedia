@@ -20,6 +20,9 @@ class ChatRoomViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+                 view.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view.
         

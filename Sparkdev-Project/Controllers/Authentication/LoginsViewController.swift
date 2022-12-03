@@ -22,6 +22,10 @@ class LoginsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+                 view.addGestureRecognizer(tapGesture)
+
+        
         view.backgroundColor = UIColor(red: 31/255, green: 35/255, blue: 41/255, alpha: 1)
         
         Email_Input.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)

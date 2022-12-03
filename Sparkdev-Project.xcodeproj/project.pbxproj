@@ -17,6 +17,8 @@
 		4934B7FA293005EA00BC38CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934B7F9293005EA00BC38CD /* HomeViewController.swift */; };
 		4934B7FC2930063200BC38CD /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934B7FB2930063200BC38CD /* PostCell.swift */; };
 		4934B7FE293006EE00BC38CD /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934B7FD293006EE00BC38CD /* CreatePostViewController.swift */; };
+		49386111293A9FB3001E2688 /* FavoriteShowsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49386110293A9FB3001E2688 /* FavoriteShowsCell.swift */; };
+		49386114293AABCE001E2688 /* FavoriteMangaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49386113293AABCE001E2688 /* FavoriteMangaCell.swift */; };
 		493C5B0229346C8100208F55 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C5B0129346C8100208F55 /* PostViewController.swift */; };
 		4945C8992908555200FB674C /* TopShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945C8982908555200FB674C /* TopShowCell.swift */; };
 		494EDFA629316EC80070101E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494EDFA529316EC80070101E /* Post.swift */; };
@@ -57,6 +59,8 @@
 		4934B7F9293005EA00BC38CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4934B7FB2930063200BC38CD /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		4934B7FD293006EE00BC38CD /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		49386110293A9FB3001E2688 /* FavoriteShowsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShowsCell.swift; sourceTree = "<group>"; };
+		49386113293AABCE001E2688 /* FavoriteMangaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMangaCell.swift; sourceTree = "<group>"; };
 		493C5B0129346C8100208F55 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		4945C8982908555200FB674C /* TopShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopShowCell.swift; sourceTree = "<group>"; };
 		494EDFA529316EC80070101E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 				492AFD2A2912B73C003120FC /* SearchTableViewCell.swift */,
 				4934B7FB2930063200BC38CD /* PostCell.swift */,
 				49B0CCA0293671AC00306A3C /* CommentCell.swift */,
+				49386110293A9FB3001E2688 /* FavoriteShowsCell.swift */,
+				49386113293AABCE001E2688 /* FavoriteMangaCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				714FF7E228FD9BE700401EF0 /* LoginsViewController.swift in Sources */,
 				49A1B31A28F7A11E000E1DDF /* Message.swift in Sources */,
 				492DDFB028F3CC5E009FECDD /* ChatRoomViewController.swift in Sources */,
+				49386114293AABCE001E2688 /* FavoriteMangaCell.swift in Sources */,
 				499BCE4F29072D3D0035BA71 /* AnimeDetailsViewController.swift in Sources */,
 				49807975291ED9B800818858 /* NewsViewController.swift in Sources */,
 				492DDFAA28F3A633009FECDD /* ChatRoomsViewController.swift in Sources */,
@@ -413,6 +420,7 @@
 				4945C8992908555200FB674C /* TopShowCell.swift in Sources */,
 				499BCE4D29072D010035BA71 /* CurrentlyAiringShowCell.swift in Sources */,
 				49B0CCA329369CF500306A3C /* Comment.swift in Sources */,
+				49386111293A9FB3001E2688 /* FavoriteShowsCell.swift in Sources */,
 				49B0CCA1293671AC00306A3C /* CommentCell.swift in Sources */,
 				71491FF42928153400269EE9 /* SettingsViewController.swift in Sources */,
 				714FF7E428FF347000401EF0 /* LaunchViewController.swift in Sources */,
@@ -581,7 +589,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.francis.Sparkdev-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = io.Sablan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

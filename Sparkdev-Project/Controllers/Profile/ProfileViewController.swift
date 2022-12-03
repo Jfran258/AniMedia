@@ -10,13 +10,68 @@ import Firebase
 import FirebaseStorage
 import AlamofireImage
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    var showsLink = ["https://cdn.myanimelist.net/images/anime/1208/94745l.jpg", "https://cdn.myanimelist.net/images/anime/1935/127974l.jpg", "https://cdn.myanimelist.net/images/anime/1517/100633l.jpg", "https://cdn.myanimelist.net/images/anime/1337/99013l.jpg"]
+    var showTitles = ["Fullmetal Alchemist: Brotherhood", "Steins;Gate", "Attack on Titan Season 3", "Hunter x Hunter"]
+    
+    var mangaLinks = ["https://cdn.myanimelist.net/images/manga/1/157897l.jpg","https://cdn.myanimelist.net/images/manga/2/253146l.jpg","https://cdn.myanimelist.net/images/manga/3/266834l.jpg"]
+    var mangaTitles = ["Berserk","One Piece","Oyasumi Punpun"]
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {        
+        if collectionView == self.favoriteShowsCollectionView {
+            return showsLink.count
+        } else if collectionView == self.favoriteMangaCollectionView {
+            return mangaLinks.count
+        } else {
+            return 5
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        // What to display for the currently airing row
+        if collectionView == self.favoriteShowsCollectionView {
+            let cell = favoriteShowsCollectionView.dequeueReusableCell(withReuseIdentifier: "favoriteShowCell", for: indexPath) as! FavoriteShowsCell
+            
+            cell.showImage.af.setImage(withURL: URL(string: showsLink[indexPath.item])!)
+            
+            cell.showImage.layer.cornerRadius = 10
+            cell.showTitleLabel.text = showTitles[indexPath.item]
+    
+            return cell
+        } else if collectionView == self.favoriteMangaCollectionView {
+            // Create the cell to be displayed
+            let cell = favoriteMangaCollectionView.dequeueReusableCell(withReuseIdentifier: "favoriteMangaCell", for: indexPath) as! FavoriteMangaCell
+            
+            cell.mangaImage.af.setImage(withURL: URL(string: mangaLinks[indexPath.item])!)
+            
+            cell.mangaImage.layer.cornerRadius = 10
+            cell.mangaTitle.text = mangaTitles[indexPath.item]
+
+            return cell
+        } else {
+            // Create the cell to be displayed
+            let cell = favoriteShowsCollectionView.dequeueReusableCell(withReuseIdentifier: "favoriteShowCell", for: indexPath) as! FavoriteShowsCell
+            
+            //cell.posterView?.layer.cornerRadius = 10
+            
+            return cell
+        }
+        
+        //return cell
+    }
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
-    
     @IBOutlet weak var backImage: UIImageView!
-    @IBOutlet weak var usernameView: UIView!
+    
+    @IBOutlet weak var favoriteShowsCollectionView: UICollectionView!
+    
+    @IBOutlet weak var favoriteMangaCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,14 +80,17 @@ class ProfileViewController: UIViewController {
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.clipsToBounds = true
         
+        //profileImage.layer.cornerRadius = 12
+        favoriteShowsCollectionView.delegate = self
+        favoriteShowsCollectionView.dataSource = self
         
-        usernameView.layer.cornerRadius = 20
-
+        favoriteMangaCollectionView.delegate = self
+        favoriteMangaCollectionView.dataSource = self
+        
         getUserData()
     }
     
     func getUserData() {
-        // Do any additional setup after loading the view.
         guard let userId = Auth.auth().currentUser?.uid else {
             return
         }
@@ -47,19 +105,19 @@ class ProfileViewController: UIViewController {
         userRef.observeSingleEvent(of: .value) { snapshot in
             // Create User object
             let aUser = User(withSnapShot: snapshot)
-            //print(aUser)
 
             print(aUser.userName)
             print(aUser.bio)
             print(aUser.profileUrl)
             print(aUser.uid)
+            //print(aUser.backImage)
             
             let newUrl = URL(string: aUser.profileUrl)
-            let newUrl2 = URL(string: aUser.backImage)
+            //let newUrl2 = URL(string: aUser.backImage)
             
             self.usernameLabel.text = aUser.userName
             self.profileImage.af.setImage(withURL: newUrl!)
-            self.backImage.af.setImage(withURL: newUrl2!)
+            //self.backImage.af.setImage(withURL: newUrl2!)
             self.bioLabel.text = aUser.bio
         }
         
@@ -71,7 +129,7 @@ class ProfileViewController: UIViewController {
         var bio: String
         var uid: String
         var profileUrl: String
-        var backImage: String
+        //var backImage: String
         
         init(withSnapShot: DataSnapshot) {
             let dict = withSnapShot.value as! [String: AnyObject]
@@ -80,7 +138,7 @@ class ProfileViewController: UIViewController {
             userName = dict["username"] as! String
             bio = dict["bio"] as! String
             profileUrl = dict["profileImageUrl"] as! String
-            backImage = dict["BackImageURL"] as! String
+            //backImage = dict["BackImageURL"] as! String
         }
     }
     

@@ -16,7 +16,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
