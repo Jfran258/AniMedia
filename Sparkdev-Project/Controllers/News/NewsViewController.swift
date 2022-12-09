@@ -16,21 +16,37 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var data = [News]()
     
+    let myRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         newsTableView.dataSource = self
         newsTableView.delegate = self
         
-        getNews()
+        myRefreshControl.addTarget(self, action: #selector(redirectUrl), for: .valueChanged)
+        myRefreshControl.tintColor = .white
+        newsTableView.refreshControl = myRefreshControl
+        
+        redirectUrl()
     }
     
-    func getNews( ){
+    @objc func redirectUrl() {
+        let url = URL(string: "https://www.animenewsnetwork.com/news/anime")!
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            let html = String(data: data!, encoding: .utf8) ?? "none"
+            self.parse(html: html)
+        }.resume()
+    }
+    
+    func parse(html: String){
         do {
-            let content = try String(contentsOf: URL(string: "https://www.animenewsnetwork.com/news/anime")!)
-            let doc: Document = try SwiftSoup.parse(content)
+            let doc: Document = try SwiftSoup.parse(html)
             
             let mainFeed = try doc.select ("div.mainfeed-section")
+            
+            data.removeAll()
             
             for news: Element in try mainFeed.select("div.herald") {
                 //title
@@ -50,12 +66,18 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 //date
                 let date: String = try news.select("time").text()
                 
-                var article = News(title: titleName, imageName: imgUrl, date: date, link: linkUrl)
+                // preview text
+                let preview: String = try news.select("div.preview").text()
+                
+                let article = News(title: titleName, imageName: imgUrl, date: date, preview: preview, link: linkUrl)
                 
                 data.append(article)
             }
-        } catch Exception.Error(let type, let message) {
-            print(message)
+            
+            DispatchQueue.main.async {
+                self.newsTableView.reloadData()
+                self.myRefreshControl.endRefreshing()
+            }
         } catch {
             print("error")
         }
@@ -74,10 +96,15 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let imgUrl = URL(string: article.imageName)
         cell.iconImageView.af.setImage(withURL: imgUrl!)
+        cell.iconImageView.layer.cornerRadius = 12
         
-        cell.date.text = article.date
+        //cell.date.text = article.date
+        
+        cell.previewLabel.text = article.preview
         
         cell.selectionStyle = .none
+        
+        cell.newsBodyView.layer.cornerRadius = 12
         
         return cell
     }
